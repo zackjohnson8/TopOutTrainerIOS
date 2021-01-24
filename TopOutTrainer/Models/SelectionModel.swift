@@ -8,32 +8,21 @@
 import Foundation
 import UIKit
 
-struct NavigationBar
-{
-    
-}
-
 class SelectionViewModel
 {
     var rightBarItem: UIBarButtonItem!
-    var selectionViews: [UIView] = []
-    var selectionViewColors: [UIColor] = [UIColor.green, UIColor.blue, UIColor.orange, UIColor.systemPink]
+    var selectionView: SelectionUIView!
     var title: String!
     
     init(_ parent: UIViewController)
     {
         createRightBarItem()
-        createSelectionViews(parent)
+        createSelectionView(parent)
     }
     
-    private func createSelectionViews(_ parent: UIViewController)
+    private func createSelectionView(_ parent: UIViewController)
     {
-        var selection: UIView!
-        for index in 0...(selectionViewColors.count - 1)
-        {
-            selection = SelectionUIView(parent: parent, bgColor: selectionViewColors[index])
-            selectionViews.append(selection as UIView)
-        }
+        selectionView = SelectionUIView(parent: parent)
     }
     
     private func createRightBarItem()

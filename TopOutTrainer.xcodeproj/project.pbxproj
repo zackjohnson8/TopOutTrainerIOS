@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		142631B725BD02040083A04F /* SelectionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142631B625BD02040083A04F /* SelectionUIButton.swift */; };
+		142631CA25BD24CF0083A04F /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142631C925BD24CF0083A04F /* UIColor+Extensions.swift */; };
 		1436EC9825B12582004720EF /* SelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EC9725B12582004720EF /* SelectionModel.swift */; };
 		1446B45825B51C1E00B11A8C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446B45725B51C1E00B11A8C /* UIViewController+Extension.swift */; };
 		146934E125A2605B00878DB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146934E025A2605B00878DB9 /* AppDelegate.swift */; };
@@ -42,6 +44,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		142631B625BD02040083A04F /* SelectionUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionUIButton.swift; sourceTree = "<group>"; };
+		142631C925BD24CF0083A04F /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		1436EC9725B12582004720EF /* SelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModel.swift; sourceTree = "<group>"; };
 		1446B45725B51C1E00B11A8C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		146934DD25A2605B00878DB9 /* TopOutTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopOutTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -102,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				1446B45725B51C1E00B11A8C /* UIViewController+Extension.swift */,
+				142631C925BD24CF0083A04F /* UIColor+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -183,6 +188,7 @@
 		149B184825B514C300F8B325 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				142631B625BD02040083A04F /* SelectionUIButton.swift */,
 				149B184025B4CCBD00F8B325 /* SelectionUIView.swift */,
 			);
 			path = Views;
@@ -342,8 +348,10 @@
 				14D13F6F25AA71E600CF6FF1 /* AppCoordinator.swift in Sources */,
 				146934EB25A2605B00878DB9 /* TopOutTrainer.xcdatamodeld in Sources */,
 				14D13F8225AA776600CF6FF1 /* SelectionViewController.swift in Sources */,
+				142631CA25BD24CF0083A04F /* UIColor+Extensions.swift in Sources */,
 				149B184125B4CCBD00F8B325 /* SelectionUIView.swift in Sources */,
 				14D13F7D25AA772200CF6FF1 /* SelectionViewCoordinator.swift in Sources */,
+				142631B725BD02040083A04F /* SelectionUIButton.swift in Sources */,
 				146934E325A2605B00878DB9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

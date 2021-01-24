@@ -23,7 +23,7 @@ final class AppCordinator: Coordinator
         let navigationController = UINavigationController()
         let selectionViewCoordinator = SelectionViewCoordinator(navigationController: navigationController)
 
-        childCoordinators.append(selectionViewCoordinator)
+        childCoordinators.append(selectionViewCoordinator as Coordinator)
 
         selectionViewCoordinator.start()
         
