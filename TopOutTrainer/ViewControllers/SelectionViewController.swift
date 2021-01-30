@@ -17,18 +17,23 @@ class SelectionViewController: UIViewController
         super.viewDidLoad()
         self.view.backgroundColor = .primaryColor()
         selectionModel = SelectionViewModel(self)
-        setupNavBar()
-        setupViewWindow()
+        setNavBar()
+        
+        setViewWindow()
     }
     
     /**
      Summary: Set the navigationItem's variables from the selectionModel
      */
-    private func setupNavBar()
+    private func setNavBar()
     {
         navigationItem.rightBarButtonItem = selectionModel.rightBarItem
         navigationItem.title = selectionModel.title
+        //navigationController?.navigationBar.barTintColor = .primaryColor() // Used if the prefersLargeTitles = false
+        navigationController?.navigationBar.layer.cornerRadius = 20
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Georgia", size: 40)!]
         navigationController?.navigationBar.prefersLargeTitles = true
+        
     }
     
     /**
@@ -36,7 +41,7 @@ class SelectionViewController: UIViewController
      the selection buttons to navigate through the application. For example this might be a square timer button which displays
      a clock, creates a shadow of the same color that it is set to, and triggers a new UIViewController for the timer screen.
      */
-    private func setupViewWindow()
+    private func setViewWindow()
     {
         selectionView = selectionModel.selectionView
         self.view.addSubview(selectionView)

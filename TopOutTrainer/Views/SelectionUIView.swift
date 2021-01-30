@@ -14,7 +14,7 @@ class SelectionUIView: UIView
     var parent: UIViewController!
     var leftVerticalStack: UIStackView!
     var rightVerticalStack: UIStackView!
-    var buttonColors: [UIColor] = [UIColor.green, UIColor.blue, UIColor.orange, UIColor.systemPink]
+    var buttonColors: [UIColor] = [UIColor.selectionGreen(), UIColor.blue, UIColor.orange, UIColor.systemPink]
     var buttons: [SelectionUIButton] = []
     
     required init(parent: UIViewController)
@@ -106,10 +106,13 @@ class SelectionUIView: UIView
             {
                 if(rightVerticalStack.arrangedSubviews.count == 0)
                 {
-                    newButton = SelectionUIButton(viewConstainer, buttonColors[index], .top)
+                    let image = UIImageView(image: UIImage(named: "Dumbbell"))
+                    image.backgroundColor = buttonColors[index]
+                    newButton = SelectionUIButton(viewConstainer, buttonColors[index], .top, image)
                 }else
                 {
-                    newButton = SelectionUIButton(viewConstainer, buttonColors[index], .bottom)
+                    let image = UIImageView(image: UIImage(systemName: "calendar", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))!)
+                    newButton = SelectionUIButton(viewConstainer, buttonColors[index], .bottom, image)
                 }
                 
                 viewConstainer.addSubview(newButton!)
@@ -120,10 +123,12 @@ class SelectionUIView: UIView
 
                 if(leftVerticalStack.arrangedSubviews.count == 0)
                 {
-                    newButton = SelectionUIButton(viewConstainer, buttonColors[index], .top)
+                    let image = UIImageView(image: UIImage(systemName: "stopwatch", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))!)
+                    newButton = SelectionUIButton(viewConstainer, buttonColors[index], .top, image)
                 }else
                 {
-                    newButton = SelectionUIButton(viewConstainer, buttonColors[index], .bottom)
+                    let image = UIImageView(image: UIImage(systemName: "chart.bar.xaxis", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))!)
+                    newButton = SelectionUIButton(viewConstainer, buttonColors[index], .bottom, image)
                 }
                 
                 viewConstainer.addSubview(newButton!)
@@ -134,3 +139,4 @@ class SelectionUIView: UIView
     }
      
 }
+

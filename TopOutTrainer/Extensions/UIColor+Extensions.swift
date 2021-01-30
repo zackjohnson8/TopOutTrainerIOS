@@ -14,4 +14,9 @@ public extension UIColor
     {
         return UIColor.systemGray4
     }
+    
+    static func selectionGreen() -> UIColor
+    {
+        return UIColor(red: 0/255, green: 199/255, blue: 9/255, alpha: 1.0)
+    }
 }
