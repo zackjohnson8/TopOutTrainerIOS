@@ -10,19 +10,47 @@ import UIKit
 
 final class SelectionViewCoordinator: Coordinator
 {
-    private(set) var childCoordinators: [Coordinator] = []
+    public var children: [Coordinator] = []
+    public let router: Router
     
-    private var navigationController: UINavigationController
+    //private lazy var selectionViewController = SelectionViewController.instantiate("Main") as SelectionViewController
     
-    init(navigationController: UINavigationController)
-    {
-        self.navigationController = navigationController
+    public init(router: Router) {
+        self.router = router
     }
     
-    func start() {
-        let selectionViewController = SelectionViewController.instantiate("Main") as SelectionViewController
-        navigationController.setViewControllers([selectionViewController], animated: false)
+    public func present(animated: Bool, onDismissed: (() -> Void)?) {
+        let viewController = SelectionViewController.init(delegate: self)
+        router.present(viewController, animated: animated, onDismissed: onDismissed)
     }
-    
-    
+        
 }
+
+//extension SelectionViewCoordinator: SelectionViewControllerDelegate {
+//
+//    public func selectionTimerButtonDidPress(_ viewController: SelectionViewController)
+//    {
+//        // TODO: - Write this
+//    }
+//}
+
+//    private var timerViewCoordinator: TimerViewCoordinator?
+//
+//    init(navigationController: UINavigationController)
+//    {
+//        self.navigationController = navigationController
+//    }
+//
+//    func start() {
+//        let selectionViewController = SelectionViewController.instantiate("Main") as SelectionViewController
+//        navigationController!.pushViewController(selectionViewController, animated: true)
+//    }
+//
+//    func didSelectTimerButton()
+//    {
+//        let timerViewCoordinator = TimerViewCoordinator(navigationController: self.navigationController!)
+//
+//        timerViewCoordinator.start()
+//
+//        self.timerViewCoordinator = timerViewCoordinator
+//    }

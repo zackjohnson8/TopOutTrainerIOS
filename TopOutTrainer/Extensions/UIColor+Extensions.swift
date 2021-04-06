@@ -12,7 +12,7 @@ public extension UIColor
 {
     static func primaryColor() -> UIColor
     {
-        return UIColor.systemGray4
+        return UIColor.systemGray5
     }
     
     static func selectionGreen() -> UIColor

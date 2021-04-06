@@ -44,6 +44,9 @@ class SelectionUIButton: UIButton
         setBGImage()
     }
     
+    /**
+     Summary: Sets the buttons shadow to be bottom right area. This shadow is also the same color of the button.
+     */
     private func setShadow()
     {
         self.layer.shadowColor = bgColor.cgColor
@@ -53,12 +56,13 @@ class SelectionUIButton: UIButton
         self.layer.masksToBounds = false
     }
     
+    /**
+     Summary: Sets the background image of the image.
+     */
     private func setBGImage()
     {
-        // using bgImage
-        // add subview to self
         self.addSubview(bgImage)
-        // add constraints
+        
         bgImage.translatesAutoresizingMaskIntoConstraints = false
         bgImage.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5).isActive = true
         bgImage.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.5).isActive = true

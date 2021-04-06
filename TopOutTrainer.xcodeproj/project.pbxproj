@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		142631B725BD02040083A04F /* SelectionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142631B625BD02040083A04F /* SelectionUIButton.swift */; };
 		142631CA25BD24CF0083A04F /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142631C925BD24CF0083A04F /* UIColor+Extensions.swift */; };
+		142999BE261BEE08006E698B /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142999BD261BEE08006E698B /* AppDelegateRouter.swift */; };
+		1430DCFE25D4DBCE006F0ADD /* TimerViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430DCFD25D4DBCE006F0ADD /* TimerViewCoordinator.swift */; };
+		1430DD0325D82669006F0ADD /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430DD0225D82669006F0ADD /* TimerViewController.swift */; };
 		1436EC9825B12582004720EF /* SelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EC9725B12582004720EF /* SelectionModel.swift */; };
 		1446B45825B51C1E00B11A8C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446B45725B51C1E00B11A8C /* UIViewController+Extension.swift */; };
 		146934E125A2605B00878DB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146934E025A2605B00878DB9 /* AppDelegate.swift */; };
@@ -19,6 +22,8 @@
 		146934F025A2605E00878DB9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146934EE25A2605E00878DB9 /* LaunchScreen.storyboard */; };
 		146934FB25A2605E00878DB9 /* TopOutTrainerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146934FA25A2605E00878DB9 /* TopOutTrainerTests.swift */; };
 		1469350625A2605E00878DB9 /* TopOutTrainerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1469350525A2605E00878DB9 /* TopOutTrainerUITests.swift */; };
+		148491D9261B992C00518405 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148491D8261B992C00518405 /* Router.swift */; };
+		148491E1261B9BA500518405 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148491E0261B9BA500518405 /* NavigationRouter.swift */; };
 		149B184125B4CCBD00F8B325 /* SelectionUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149B184025B4CCBD00F8B325 /* SelectionUIView.swift */; };
 		14D13F6F25AA71E600CF6FF1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D13F6E25AA71E600CF6FF1 /* AppCoordinator.swift */; };
 		14D13F7825AA730F00CF6FF1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D13F7725AA730F00CF6FF1 /* Coordinator.swift */; };
@@ -46,6 +51,9 @@
 /* Begin PBXFileReference section */
 		142631B625BD02040083A04F /* SelectionUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionUIButton.swift; sourceTree = "<group>"; };
 		142631C925BD24CF0083A04F /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
+		142999BD261BEE08006E698B /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
+		1430DCFD25D4DBCE006F0ADD /* TimerViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewCoordinator.swift; sourceTree = "<group>"; };
+		1430DD0225D82669006F0ADD /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		1436EC9725B12582004720EF /* SelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModel.swift; sourceTree = "<group>"; };
 		1446B45725B51C1E00B11A8C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		146934DD25A2605B00878DB9 /* TopOutTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopOutTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +70,8 @@
 		1469350125A2605E00878DB9 /* TopOutTrainerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TopOutTrainerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1469350525A2605E00878DB9 /* TopOutTrainerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopOutTrainerUITests.swift; sourceTree = "<group>"; };
 		1469350725A2605E00878DB9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		148491D8261B992C00518405 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
+		148491E0261B9BA500518405 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		149B184025B4CCBD00F8B325 /* SelectionUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionUIView.swift; sourceTree = "<group>"; };
 		14D13F6E25AA71E600CF6FF1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		14D13F7725AA730F00CF6FF1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
@@ -115,6 +125,7 @@
 			isa = PBXGroup;
 			children = (
 				14D13F8125AA776600CF6FF1 /* SelectionViewController.swift */,
+				1430DD0225D82669006F0ADD /* TimerViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -146,8 +157,8 @@
 				149B184825B514C300F8B325 /* Views */,
 				1436EC9C25B4A0D6004720EF /* Extensions */,
 				1436EC9625B12565004720EF /* Models */,
-				14D13F7625AA72F800CF6FF1 /* Protocols */,
 				14D13F6D25AA719E00CF6FF1 /* Coordinators */,
+				148491D7261B98FF00518405 /* Routers */,
 				1469351725A2696000878DB9 /* DefaultFiles */,
 				146934F125A2605E00878DB9 /* Info.plist */,
 			);
@@ -185,6 +196,16 @@
 			path = DefaultFiles;
 			sourceTree = "<group>";
 		};
+		148491D7261B98FF00518405 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				148491D8261B992C00518405 /* Router.swift */,
+				148491E0261B9BA500518405 /* NavigationRouter.swift */,
+				142999BD261BEE08006E698B /* AppDelegateRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
 		149B184825B514C300F8B325 /* Views */ = {
 			isa = PBXGroup;
 			children = (
@@ -197,18 +218,12 @@
 		14D13F6D25AA719E00CF6FF1 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
+				14D13F7725AA730F00CF6FF1 /* Coordinator.swift */,
 				14D13F7C25AA772200CF6FF1 /* SelectionViewCoordinator.swift */,
 				14D13F6E25AA71E600CF6FF1 /* AppCoordinator.swift */,
+				1430DCFD25D4DBCE006F0ADD /* TimerViewCoordinator.swift */,
 			);
 			path = Coordinators;
-			sourceTree = "<group>";
-		};
-		14D13F7625AA72F800CF6FF1 /* Protocols */ = {
-			isa = PBXGroup;
-			children = (
-				14D13F7725AA730F00CF6FF1 /* Coordinator.swift */,
-			);
-			path = Protocols;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -343,13 +358,18 @@
 			files = (
 				1446B45825B51C1E00B11A8C /* UIViewController+Extension.swift in Sources */,
 				1436EC9825B12582004720EF /* SelectionModel.swift in Sources */,
+				148491E1261B9BA500518405 /* NavigationRouter.swift in Sources */,
+				142999BE261BEE08006E698B /* AppDelegateRouter.swift in Sources */,
 				146934E125A2605B00878DB9 /* AppDelegate.swift in Sources */,
 				14D13F7825AA730F00CF6FF1 /* Coordinator.swift in Sources */,
 				14D13F6F25AA71E600CF6FF1 /* AppCoordinator.swift in Sources */,
 				146934EB25A2605B00878DB9 /* TopOutTrainer.xcdatamodeld in Sources */,
 				14D13F8225AA776600CF6FF1 /* SelectionViewController.swift in Sources */,
+				148491D9261B992C00518405 /* Router.swift in Sources */,
+				1430DCFE25D4DBCE006F0ADD /* TimerViewCoordinator.swift in Sources */,
 				142631CA25BD24CF0083A04F /* UIColor+Extensions.swift in Sources */,
 				149B184125B4CCBD00F8B325 /* SelectionUIView.swift in Sources */,
+				1430DD0325D82669006F0ADD /* TimerViewController.swift in Sources */,
 				14D13F7D25AA772200CF6FF1 /* SelectionViewCoordinator.swift in Sources */,
 				142631B725BD02040083A04F /* SelectionUIButton.swift in Sources */,
 				146934E325A2605B00878DB9 /* SceneDelegate.swift in Sources */,

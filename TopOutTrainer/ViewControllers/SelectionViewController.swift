@@ -13,12 +13,17 @@ class SelectionViewController: UIViewController
     var selectionModel: SelectionViewModel!
     var selectionView: SelectionUIView!
     
+    convenience init(delegate: Coordinator)
+    {
+        self.init()
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .primaryColor()
         selectionModel = SelectionViewModel(self)
         setNavBar()
-        
         setViewWindow()
     }
     
@@ -29,11 +34,9 @@ class SelectionViewController: UIViewController
     {
         navigationItem.rightBarButtonItem = selectionModel.rightBarItem
         navigationItem.title = selectionModel.title
-        //navigationController?.navigationBar.barTintColor = .primaryColor() // Used if the prefersLargeTitles = false
         navigationController?.navigationBar.layer.cornerRadius = 20
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Georgia", size: 40)!]
+        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 40)!]
         navigationController?.navigationBar.prefersLargeTitles = true
-        
     }
     
     /**
@@ -46,5 +49,9 @@ class SelectionViewController: UIViewController
         selectionView = selectionModel.selectionView
         self.view.addSubview(selectionView)
     }
+    
+}
+
+protocol SelectionViewControllerDelegate: class {
     
 }

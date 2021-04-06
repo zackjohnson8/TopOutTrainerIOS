@@ -17,6 +17,14 @@ class SelectionUIView: UIView
     var buttonColors: [UIColor] = [UIColor.selectionGreen(), UIColor.blue, UIColor.orange, UIColor.systemPink]
     var buttons: [SelectionUIButton] = []
     
+    enum ButtonType
+    {
+        case dumbbell
+        case calendar
+        case stopwatch
+        case chart
+    }
+    
     required init(parent: UIViewController)
     {
         super.init(frame: CGRect.zero)
@@ -41,9 +49,9 @@ class SelectionUIView: UIView
     {
         translatesAutoresizingMaskIntoConstraints = false
         
-        self.widthAnchor.constraint(equalTo: parent.view.widthAnchor).isActive = true
-        self.heightAnchor.constraint(equalTo: parent.view.safeAreaLayoutGuide.heightAnchor).isActive = true
-        self.topAnchor.constraint(equalTo: parent.view.safeAreaLayoutGuide.topAnchor, constant: 30).isActive = true
+        self.widthAnchor.constraint(equalTo: parent.view.widthAnchor, constant: 5).isActive = true
+        self.heightAnchor.constraint(equalTo: parent.view.safeAreaLayoutGuide.heightAnchor, constant: 0).isActive = true
+        self.topAnchor.constraint(equalTo: parent.view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
         self.centerXAnchor.constraint(equalTo: parent.view.centerXAnchor).isActive = true
     }
     
@@ -56,6 +64,8 @@ class SelectionUIView: UIView
         leftVerticalStack.axis = .vertical
         leftVerticalStack.backgroundColor = .primaryColor()
         leftVerticalStack.distribution = .fillEqually
+        leftVerticalStack.layer.cornerRadius = 30
+        leftVerticalStack.layer.maskedCorners = [.layerMinXMinYCorner]
         
         rightVerticalStack = UIStackView()
         rightVerticalStack.axis = .vertical
@@ -64,7 +74,6 @@ class SelectionUIView: UIView
         
         self.addSubview(leftVerticalStack)
         self.addSubview(rightVerticalStack)
-        
         setStackConstraints()
     }
     
@@ -94,7 +103,6 @@ class SelectionUIView: UIView
      */
     private func createButtons()
     {
-        
         for index in 0 ... (buttonColors.count - 1)
         {
             var newButton:SelectionUIButton? = nil
@@ -109,10 +117,16 @@ class SelectionUIView: UIView
                     let image = UIImageView(image: UIImage(named: "Dumbbell"))
                     image.backgroundColor = buttonColors[index]
                     newButton = SelectionUIButton(viewConstainer, buttonColors[index], .top, image)
+                    
+                    let buttonGesture = UITapGestureRecognizer(target: self, action: #selector(dumbbellButtonPressed))
+                    newButton?.addGestureRecognizer(buttonGesture)
                 }else
                 {
                     let image = UIImageView(image: UIImage(systemName: "calendar", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))!)
                     newButton = SelectionUIButton(viewConstainer, buttonColors[index], .bottom, image)
+                    
+                    let buttonGesture = UITapGestureRecognizer(target: self, action: #selector(calendarButtonPressed))
+                    newButton?.addGestureRecognizer(buttonGesture)
                 }
                 
                 viewConstainer.addSubview(newButton!)
@@ -120,23 +134,50 @@ class SelectionUIView: UIView
             }else
             // Left Vertical Stack
             {
-
                 if(leftVerticalStack.arrangedSubviews.count == 0)
                 {
                     let image = UIImageView(image: UIImage(systemName: "stopwatch", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))!)
                     newButton = SelectionUIButton(viewConstainer, buttonColors[index], .top, image)
+                    
+                    let buttonGesture = UITapGestureRecognizer(target: self, action: #selector(stopwatchButtonPressed))
+                    newButton?.addGestureRecognizer(buttonGesture)
                 }else
                 {
                     let image = UIImageView(image: UIImage(systemName: "chart.bar.xaxis", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))!)
                     newButton = SelectionUIButton(viewConstainer, buttonColors[index], .bottom, image)
+                    
+                    let buttonGesture = UITapGestureRecognizer(target: self, action: #selector(chartButtonPressed))
+                    newButton?.addGestureRecognizer(buttonGesture)
                 }
                 
                 viewConstainer.addSubview(newButton!)
                 leftVerticalStack.addArrangedSubview(viewConstainer)
             }
-        }        
+        }
+    }
+
+    
+    @objc func dumbbellButtonPressed()
+    {
+        #warning("TODO")
+    }
+    
+    @objc func calendarButtonPressed()
+    {
+        #warning("TODO")
+    }
+    
+    @objc func stopwatchButtonPressed(sender: UITapGestureRecognizer)
+    {
+        //let timerWindow = TimerViewCoordinator.init(navigationController: parent.navigationController!)
+        //timerWindow.start()
+        //parent.navigationController.didSelect
         
     }
-     
+    
+    @objc func chartButtonPressed()
+    {
+        #warning("TODO")
+    }
 }
 

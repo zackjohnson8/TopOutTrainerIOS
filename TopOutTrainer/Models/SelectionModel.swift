@@ -11,7 +11,7 @@ import UIKit
 class SelectionViewModel
 {
     var rightBarItem: UIBarButtonItem!
-    var selectionView: SelectionUIView!
+    var selectionView: SelectionUIView! // Holds the Selection Buttons
     var title: String!
     
     init(_ parent: UIViewController)
@@ -30,7 +30,8 @@ class SelectionViewModel
         let userImage = UIImage(systemName: "person.crop.circle")
         rightBarItem = UIBarButtonItem(image: userImage, style: .plain, target: self, action: #selector(tappedRightBarButton))
         rightBarItem.tintColor = .systemBlue
-        title = "Topout Trainer"
+        title = "Dashboard"
+        
     }
     
     @objc private func tappedRightBarButton()

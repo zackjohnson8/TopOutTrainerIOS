@@ -23,7 +23,7 @@
                     <rect key="frame" x="0.0" y="0.0" width="3312" height="128"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
-                        <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zt1-XG-sUU" customClass="CalendarSelection" customModule="TopOutTrainer" customModuleProvider="target">
+                        <view contentMode="scaleToFill" ambiguous="YES" restorationIdentifier="Timer" translatesAutoresizingMaskIntoConstraints="NO" id="zt1-XG-sUU">
                             <rect key="frame" x="0.0" y="0.0" width="2898" height="128"/>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         </view>
