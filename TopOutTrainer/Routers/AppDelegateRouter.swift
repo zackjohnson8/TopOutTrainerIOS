@@ -19,11 +19,12 @@ public class AppDelegateRouter: Router {
     
     public func present(_ viewController: UIViewController, animated: Bool, onDismissed: (()->Void)?)
     {
-        window.rootViewController = viewController
+        window.rootViewController = viewController // New copy of the SelectionViewController is submitted to the rootViewController
         window.makeKeyAndVisible()
     }
     
-    public func dismiss(animated: Bool) {
+    public func dismiss(animated: Bool)
+    {
         // doing nothing because the AppDelegate will be holding onto this and won't be dismissing
     }
 }

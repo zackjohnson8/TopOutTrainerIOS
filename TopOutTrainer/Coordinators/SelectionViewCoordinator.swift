@@ -8,22 +8,31 @@
 import Foundation
 import UIKit
 
-final class SelectionViewCoordinator: Coordinator
+
+class SelectionViewCoordinator: Coordinator
 {
-    public var children: [Coordinator] = []
-    public let router: Router
-    
-    //private lazy var selectionViewController = SelectionViewController.instantiate("Main") as SelectionViewController
+    var children: [Coordinator] = []
+    var router: Router
+    var rootViewController: SelectionViewController
     
     public init(router: Router) {
         self.router = router
+        self.rootViewController = SelectionViewController() // Initial implementation of SelectionViewController
     }
+
     
     public func present(animated: Bool, onDismissed: (() -> Void)?) {
-        let viewController = SelectionViewController.init(delegate: self)
-        router.present(viewController, animated: animated, onDismissed: onDismissed)
+        rootViewController.delegate = self
+        router.present(rootViewController, animated: animated, onDismissed: onDismissed) // Passes the AppDelegateRouter the rootViewController (SelectionViewController).
     }
         
+}
+
+extension SelectionViewCoordinator: SelectionViewControllerDelegate
+{
+    func timerButtonPressed() {
+        print("HelloQ!!!!")
+    }
 }
 
 //extension SelectionViewCoordinator: SelectionViewControllerDelegate {

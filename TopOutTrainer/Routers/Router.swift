@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-public protocol Router: class {
+public protocol Router: AnyObject {
     
     func present(_ viewController: UIViewController, animated: Bool)
     

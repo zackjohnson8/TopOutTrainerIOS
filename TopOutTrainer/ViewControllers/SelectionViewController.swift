@@ -8,23 +8,30 @@
 import Foundation
 import UIKit
 
+protocol SelectionViewControllerDelegate: AnyObject {
+    
+    func timerButtonPressed()
+}
+
 class SelectionViewController: UIViewController
 {
     var selectionModel: SelectionViewModel!
     var selectionView: SelectionUIView!
     
-    convenience init(delegate: Coordinator)
-    {
-        self.init()
-        
-    }
+    weak var delegate: SelectionViewControllerDelegate? = nil
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .primaryColor()
         selectionModel = SelectionViewModel(self)
+        selectionModel.delegate = self
         setNavBar()
         setViewWindow()
+        
+        
+        if self.delegate == nil {
+            print("NIL")
+        }
     }
     
     /**
@@ -32,11 +39,11 @@ class SelectionViewController: UIViewController
      */
     private func setNavBar()
     {
-        navigationItem.rightBarButtonItem = selectionModel.rightBarItem
-        navigationItem.title = selectionModel.title
-        navigationController?.navigationBar.layer.cornerRadius = 20
-        navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 40)!]
-        navigationController?.navigationBar.prefersLargeTitles = true
+        self.navigationItem.rightBarButtonItem = selectionModel.rightBarItem
+        self.navigationItem.title = selectionModel.title
+        self.navigationController?.navigationBar.layer.cornerRadius = 20
+        self.navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.font: UIFont(name: "Georgia-Bold", size: 40)!]
+        self.navigationController?.navigationBar.prefersLargeTitles = true
     }
     
     /**
@@ -52,6 +59,17 @@ class SelectionViewController: UIViewController
     
 }
 
-protocol SelectionViewControllerDelegate: class {
+extension SelectionViewController: SelectionViewModelDelegate
+{
+    func onSelectionButtonPressed(buttonType: ButtonType) {
+        if buttonType == ButtonType.timer
+        {
+            print("Hello2")
+            self.delegate?.timerButtonPressed()
+        }
+    }
+    
     
 }
+
+

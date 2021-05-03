@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		14120F73263C79F8002D89CC /* PersonalNotes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14120F72263C79F8002D89CC /* PersonalNotes.rtf */; };
 		142631B725BD02040083A04F /* SelectionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142631B625BD02040083A04F /* SelectionUIButton.swift */; };
 		142631CA25BD24CF0083A04F /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142631C925BD24CF0083A04F /* UIColor+Extensions.swift */; };
 		142999BE261BEE08006E698B /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142999BD261BEE08006E698B /* AppDelegateRouter.swift */; };
@@ -49,6 +50,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		14120F72263C79F8002D89CC /* PersonalNotes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = PersonalNotes.rtf; sourceTree = "<group>"; };
 		142631B625BD02040083A04F /* SelectionUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionUIButton.swift; sourceTree = "<group>"; };
 		142631C925BD24CF0083A04F /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		142999BD261BEE08006E698B /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		14120F71263C79CA002D89CC /* Notes */ = {
+			isa = PBXGroup;
+			children = (
+				14120F72263C79F8002D89CC /* PersonalNotes.rtf */,
+			);
+			path = Notes;
+			sourceTree = "<group>";
+		};
 		1436EC9625B12565004720EF /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -133,6 +143,7 @@
 		146934D425A2605B00878DB9 = {
 			isa = PBXGroup;
 			children = (
+				14120F71263C79CA002D89CC /* Notes */,
 				146934DF25A2605B00878DB9 /* TopOutTrainer */,
 				146934F925A2605E00878DB9 /* TopOutTrainerTests */,
 				1469350425A2605E00878DB9 /* TopOutTrainerUITests */,
@@ -153,12 +164,12 @@
 		146934DF25A2605B00878DB9 /* TopOutTrainer */ = {
 			isa = PBXGroup;
 			children = (
-				1446B45C25B51F1000B11A8C /* ViewControllers */,
 				149B184825B514C300F8B325 /* Views */,
-				1436EC9C25B4A0D6004720EF /* Extensions */,
 				1436EC9625B12565004720EF /* Models */,
-				14D13F6D25AA719E00CF6FF1 /* Coordinators */,
 				148491D7261B98FF00518405 /* Routers */,
+				1436EC9C25B4A0D6004720EF /* Extensions */,
+				14D13F6D25AA719E00CF6FF1 /* Coordinators */,
+				1446B45C25B51F1000B11A8C /* ViewControllers */,
 				1469351725A2696000878DB9 /* DefaultFiles */,
 				146934F125A2605E00878DB9 /* Info.plist */,
 			);
@@ -199,9 +210,9 @@
 		148491D7261B98FF00518405 /* Routers */ = {
 			isa = PBXGroup;
 			children = (
-				148491D8261B992C00518405 /* Router.swift */,
-				148491E0261B9BA500518405 /* NavigationRouter.swift */,
 				142999BD261BEE08006E698B /* AppDelegateRouter.swift */,
+				148491E0261B9BA500518405 /* NavigationRouter.swift */,
+				148491D8261B992C00518405 /* Router.swift */,
 			);
 			path = Routers;
 			sourceTree = "<group>";
@@ -218,8 +229,8 @@
 		14D13F6D25AA719E00CF6FF1 /* Coordinators */ = {
 			isa = PBXGroup;
 			children = (
-				14D13F7725AA730F00CF6FF1 /* Coordinator.swift */,
 				14D13F7C25AA772200CF6FF1 /* SelectionViewCoordinator.swift */,
+				14D13F7725AA730F00CF6FF1 /* Coordinator.swift */,
 				14D13F6E25AA71E600CF6FF1 /* AppCoordinator.swift */,
 				1430DCFD25D4DBCE006F0ADD /* TimerViewCoordinator.swift */,
 			);
@@ -329,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				14120F73263C79F8002D89CC /* PersonalNotes.rtf in Resources */,
 				146934F025A2605E00878DB9 /* LaunchScreen.storyboard in Resources */,
 				146934ED25A2605E00878DB9 /* Assets.xcassets in Resources */,
 				146934E825A2605B00878DB9 /* Main.storyboard in Resources */,

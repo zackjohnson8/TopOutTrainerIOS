@@ -8,21 +8,35 @@
 import Foundation
 import UIKit
 
+public enum ButtonType {
+    case timer,
+         weights,
+         stats,
+         calendar
+}
+
+protocol SelectionViewModelDelegate: AnyObject {
+    func onSelectionButtonPressed(buttonType: ButtonType)
+}
+
 class SelectionViewModel
 {
     var rightBarItem: UIBarButtonItem!
     var selectionView: SelectionUIView! // Holds the Selection Buttons
     var title: String!
     
-    init(_ parent: UIViewController)
+    weak var delegate: SelectionViewModelDelegate?
+    
+    init(_ parent: SelectionViewController)
     {
         createRightBarItem()
         createSelectionView(parent)
     }
     
-    private func createSelectionView(_ parent: UIViewController)
+    private func createSelectionView(_ parent: SelectionViewController)
     {
         selectionView = SelectionUIView(parent: parent)
+        selectionView.delegate = self
     }
     
     private func createRightBarItem()
@@ -39,4 +53,25 @@ class SelectionViewModel
         // Add a dropdown menu of account options
         print("Right NavBar User Icon Clicked")
     }
+}
+
+extension SelectionViewModel: SelectionUIViewDelegate
+{
+    func onTimerButtonPressed() {
+        self.delegate?.onSelectionButtonPressed(buttonType: ButtonType.timer)
+    }
+    
+    func onWeightsButtonPressed() {
+        print("Weight Button Pressed")
+    }
+    
+    func onStatsButtonPressed() {
+        print("Stats Button Pressed")
+    }
+    
+    func onCalendarButtonPressed() {
+        print("Calendar Button Pressed")
+    }
+    
+    
 }

@@ -7,16 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "41D9AFA2-F3F3-4B4D-8BB6-ECE15E424B07"
+            uuid = "C217A048-DE83-4849-BA48-6C00B7D6CE2D"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "TopOutTrainer/ViewControllers/SelectionViewController.swift"
+            filePath = "TopOutTrainer/Coordinators/SelectionViewCoordinator.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
-            landmarkName = "setViewWindow()"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
+            landmarkName = "timerButtonPressed()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

@@ -8,14 +8,24 @@
 import Foundation
 import UIKit
 
+protocol SelectionUIViewDelegate: AnyObject
+{
+    func onTimerButtonPressed()
+    func onWeightsButtonPressed()
+    func onStatsButtonPressed()
+    func onCalendarButtonPressed()
+}
+
 class SelectionUIView: UIView
 {
     
-    var parent: UIViewController!
+    var parent: SelectionViewController!
     var leftVerticalStack: UIStackView!
     var rightVerticalStack: UIStackView!
     var buttonColors: [UIColor] = [UIColor.selectionGreen(), UIColor.blue, UIColor.orange, UIColor.systemPink]
     var buttons: [SelectionUIButton] = []
+    
+    weak var delegate: SelectionUIViewDelegate?
     
     enum ButtonType
     {
@@ -25,7 +35,7 @@ class SelectionUIView: UIView
         case chart
     }
     
-    required init(parent: UIViewController)
+    required init(parent: SelectionViewController)
     {
         super.init(frame: CGRect.zero)
         self.parent = parent
@@ -172,6 +182,8 @@ class SelectionUIView: UIView
         //let timerWindow = TimerViewCoordinator.init(navigationController: parent.navigationController!)
         //timerWindow.start()
         //parent.navigationController.didSelect
+        print("hello")
+        self.delegate?.onTimerButtonPressed()
         
     }
     
