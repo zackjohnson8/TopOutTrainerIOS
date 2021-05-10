@@ -9,29 +9,25 @@ import Foundation
 import UIKit
 
 protocol SelectionViewControllerDelegate: AnyObject {
-    
     func timerButtonPressed()
 }
 
-class SelectionViewController: UIViewController
+final class SelectionViewController: UIViewController
 {
     var selectionModel: SelectionViewModel!
     var selectionView: SelectionUIView!
     
-    weak var delegate: SelectionViewControllerDelegate? = nil
+    weak var delegate: SelectionViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = .primaryColor()
+        
         selectionModel = SelectionViewModel(self)
         selectionModel.delegate = self
-        setNavBar()
+        
         setViewWindow()
-        
-        
-        if self.delegate == nil {
-            print("NIL")
-        }
+        setNavBar()
     }
     
     /**
@@ -64,7 +60,7 @@ extension SelectionViewController: SelectionViewModelDelegate
     func onSelectionButtonPressed(buttonType: ButtonType) {
         if buttonType == ButtonType.timer
         {
-            print("Hello2")
+            print("Hello23")
             self.delegate?.timerButtonPressed()
         }
     }

@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		14120F73263C79F8002D89CC /* PersonalNotes.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 14120F72263C79F8002D89CC /* PersonalNotes.rtf */; };
+		1416C9CA264086B900BAB857 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416C9C9264086B900BAB857 /* Navigator.swift */; };
+		1416C9CC264088D800BAB857 /* AppRootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416C9CB264088D800BAB857 /* AppRootViewController.swift */; };
+		1416C9CE2640892B00BAB857 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416C9CD2640892B00BAB857 /* UIView+Extensions.swift */; };
 		142631B725BD02040083A04F /* SelectionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142631B625BD02040083A04F /* SelectionUIButton.swift */; };
 		142631CA25BD24CF0083A04F /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142631C925BD24CF0083A04F /* UIColor+Extensions.swift */; };
 		142999BE261BEE08006E698B /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142999BD261BEE08006E698B /* AppDelegateRouter.swift */; };
-		1430DCFE25D4DBCE006F0ADD /* TimerViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430DCFD25D4DBCE006F0ADD /* TimerViewCoordinator.swift */; };
 		1430DD0325D82669006F0ADD /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1430DD0225D82669006F0ADD /* TimerViewController.swift */; };
 		1436EC9825B12582004720EF /* SelectionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1436EC9725B12582004720EF /* SelectionModel.swift */; };
-		1446B45825B51C1E00B11A8C /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1446B45725B51C1E00B11A8C /* UIViewController+Extension.swift */; };
 		146934E125A2605B00878DB9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146934E025A2605B00878DB9 /* AppDelegate.swift */; };
 		146934E325A2605B00878DB9 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146934E225A2605B00878DB9 /* SceneDelegate.swift */; };
 		146934E825A2605B00878DB9 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 146934E625A2605B00878DB9 /* Main.storyboard */; };
@@ -51,13 +52,14 @@
 
 /* Begin PBXFileReference section */
 		14120F72263C79F8002D89CC /* PersonalNotes.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = PersonalNotes.rtf; sourceTree = "<group>"; };
+		1416C9C9264086B900BAB857 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		1416C9CB264088D800BAB857 /* AppRootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRootViewController.swift; sourceTree = "<group>"; };
+		1416C9CD2640892B00BAB857 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		142631B625BD02040083A04F /* SelectionUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionUIButton.swift; sourceTree = "<group>"; };
 		142631C925BD24CF0083A04F /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		142999BD261BEE08006E698B /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
-		1430DCFD25D4DBCE006F0ADD /* TimerViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewCoordinator.swift; sourceTree = "<group>"; };
 		1430DD0225D82669006F0ADD /* TimerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		1436EC9725B12582004720EF /* SelectionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionModel.swift; sourceTree = "<group>"; };
-		1446B45725B51C1E00B11A8C /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		146934DD25A2605B00878DB9 /* TopOutTrainer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TopOutTrainer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		146934E025A2605B00878DB9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		146934E225A2605B00878DB9 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -125,8 +127,8 @@
 		1436EC9C25B4A0D6004720EF /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1446B45725B51C1E00B11A8C /* UIViewController+Extension.swift */,
 				142631C925BD24CF0083A04F /* UIColor+Extensions.swift */,
+				1416C9CD2640892B00BAB857 /* UIView+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -136,6 +138,7 @@
 			children = (
 				14D13F8125AA776600CF6FF1 /* SelectionViewController.swift */,
 				1430DD0225D82669006F0ADD /* TimerViewController.swift */,
+				1416C9CB264088D800BAB857 /* AppRootViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -230,9 +233,9 @@
 			isa = PBXGroup;
 			children = (
 				14D13F7C25AA772200CF6FF1 /* SelectionViewCoordinator.swift */,
-				14D13F7725AA730F00CF6FF1 /* Coordinator.swift */,
 				14D13F6E25AA71E600CF6FF1 /* AppCoordinator.swift */,
-				1430DCFD25D4DBCE006F0ADD /* TimerViewCoordinator.swift */,
+				14D13F7725AA730F00CF6FF1 /* Coordinator.swift */,
+				1416C9C9264086B900BAB857 /* Navigator.swift */,
 			);
 			path = Coordinators;
 			sourceTree = "<group>";
@@ -368,8 +371,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1446B45825B51C1E00B11A8C /* UIViewController+Extension.swift in Sources */,
 				1436EC9825B12582004720EF /* SelectionModel.swift in Sources */,
+				1416C9CE2640892B00BAB857 /* UIView+Extensions.swift in Sources */,
 				148491E1261B9BA500518405 /* NavigationRouter.swift in Sources */,
 				142999BE261BEE08006E698B /* AppDelegateRouter.swift in Sources */,
 				146934E125A2605B00878DB9 /* AppDelegate.swift in Sources */,
@@ -378,12 +381,13 @@
 				146934EB25A2605B00878DB9 /* TopOutTrainer.xcdatamodeld in Sources */,
 				14D13F8225AA776600CF6FF1 /* SelectionViewController.swift in Sources */,
 				148491D9261B992C00518405 /* Router.swift in Sources */,
-				1430DCFE25D4DBCE006F0ADD /* TimerViewCoordinator.swift in Sources */,
+				1416C9CA264086B900BAB857 /* Navigator.swift in Sources */,
 				142631CA25BD24CF0083A04F /* UIColor+Extensions.swift in Sources */,
 				149B184125B4CCBD00F8B325 /* SelectionUIView.swift in Sources */,
 				1430DD0325D82669006F0ADD /* TimerViewController.swift in Sources */,
 				14D13F7D25AA772200CF6FF1 /* SelectionViewCoordinator.swift in Sources */,
 				142631B725BD02040083A04F /* SelectionUIButton.swift in Sources */,
+				1416C9CC264088D800BAB857 /* AppRootViewController.swift in Sources */,
 				146934E325A2605B00878DB9 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

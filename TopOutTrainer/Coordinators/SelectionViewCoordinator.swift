@@ -9,33 +9,38 @@ import Foundation
 import UIKit
 
 
-class SelectionViewCoordinator: Coordinator
+class SelectionViewCoordinator: NavigationCoordinator
 {
-    var children: [Coordinator] = []
-    var router: Router
-    var rootViewController: SelectionViewController
+    var childCoordinators: [Coordinator] = []
+    var navigator: NavigatorType
+    var rootViewController: UINavigationController
     
-    public init(router: Router) {
-        self.router = router
-        self.rootViewController = SelectionViewController() // Initial implementation of SelectionViewController
+    private let selectionViewController: SelectionViewController
+    
+    init()
+    {
+        let selectionViewController = SelectionViewController()
+        self.selectionViewController = selectionViewController
+        
+        let navigationController = UINavigationController(rootViewController: selectionViewController)
+        self.navigator = Navigator(navigationController: navigationController)
+        self.rootViewController = navigationController
     }
 
-    
-    public func present(animated: Bool, onDismissed: (() -> Void)?) {
-        rootViewController.delegate = self
-        router.present(rootViewController, animated: animated, onDismissed: onDismissed) // Passes the AppDelegateRouter the rootViewController (SelectionViewController).
+    func start()
+    {
+        selectionViewController.delegate = self
     }
         
 }
 
-extension SelectionViewCoordinator: SelectionViewControllerDelegate
-{
+extension SelectionViewCoordinator: SelectionViewControllerDelegate {
     func timerButtonPressed() {
-        print("HelloQ!!!!")
+        print("Hello Zack, glad to see you've finally done it")
     }
 }
 
-//extension SelectionViewCoordinator: SelectionViewControllerDelegate {
+//extension SelectionViewCoordinator: {
 //
 //    public func selectionTimerButtonDidPress(_ viewController: SelectionViewController)
 //    {
