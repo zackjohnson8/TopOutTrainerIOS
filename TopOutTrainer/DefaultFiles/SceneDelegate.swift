@@ -9,8 +9,8 @@ import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
-    var appCoordinator: AppCoordinator? //= SelectionViewCoordinator(router: router)
-    var window: UIWindow? //= UIWindow(frame: UIScreen.main.bounds)
+    var appCoordinator: AppCoordinator?
+    var window: UIWindow?
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
@@ -20,6 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         let window = UIWindow(windowScene: windowScene)
         self.window = window
+        
         appCoordinator = AppCoordinator(window: window)
         appCoordinator?.start()
     }

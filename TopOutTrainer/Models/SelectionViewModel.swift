@@ -62,15 +62,15 @@ extension SelectionViewModel: SelectionUIViewDelegate
     }
     
     func onWeightsButtonPressed() {
-        print("Weight Button Pressed")
+        self.delegate?.onSelectionButtonPressed(buttonType: ButtonType.weights)
     }
     
     func onStatsButtonPressed() {
-        print("Stats Button Pressed")
+        self.delegate?.onSelectionButtonPressed(buttonType: ButtonType.stats)
     }
     
     func onCalendarButtonPressed() {
-        print("Calendar Button Pressed")
+        self.delegate?.onSelectionButtonPressed(buttonType: ButtonType.calendar)
     }
     
     

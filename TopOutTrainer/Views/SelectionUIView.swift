@@ -128,7 +128,7 @@ class SelectionUIView: UIView
                     image.backgroundColor = buttonColors[index]
                     newButton = SelectionUIButton(viewConstainer, buttonColors[index], .top, image)
                     
-                    let buttonGesture = UITapGestureRecognizer(target: self, action: #selector(dumbbellButtonPressed))
+                    let buttonGesture = UITapGestureRecognizer(target: self, action: #selector(weightsButtonPressed))
                     newButton?.addGestureRecognizer(buttonGesture)
                 }else
                 {
@@ -156,7 +156,7 @@ class SelectionUIView: UIView
                     let image = UIImageView(image: UIImage(systemName: "chart.bar.xaxis", withConfiguration: UIImage.SymbolConfiguration(weight: .regular))!)
                     newButton = SelectionUIButton(viewConstainer, buttonColors[index], .bottom, image)
                     
-                    let buttonGesture = UITapGestureRecognizer(target: self, action: #selector(chartButtonPressed))
+                    let buttonGesture = UITapGestureRecognizer(target: self, action: #selector(statsButtonPressed))
                     newButton?.addGestureRecognizer(buttonGesture)
                 }
                 
@@ -165,31 +165,32 @@ class SelectionUIView: UIView
             }
         }
     }
+    
+    
 
     
-    @objc func dumbbellButtonPressed()
+    @objc func weightsButtonPressed()
     {
-        #warning("TODO")
+        print("Weights Button Pressed")
+        self.delegate?.onWeightsButtonPressed()
     }
     
     @objc func calendarButtonPressed()
     {
-        #warning("TODO")
+        print("Calendar Button Pressed")
+        self.delegate?.onCalendarButtonPressed()
     }
     
-    @objc func stopwatchButtonPressed(sender: UITapGestureRecognizer)
+    @objc func stopwatchButtonPressed()
     {
-        //let timerWindow = TimerViewCoordinator.init(navigationController: parent.navigationController!)
-        //timerWindow.start()
-        //parent.navigationController.didSelect
-        print("hello")
+        print("Stopwatch Button Pressed")
         self.delegate?.onTimerButtonPressed()
-        
     }
     
-    @objc func chartButtonPressed()
+    @objc func statsButtonPressed()
     {
-        #warning("TODO")
+        print("Stats Button Pressed")
+        self.delegate?.onStatsButtonPressed()
     }
 }
 

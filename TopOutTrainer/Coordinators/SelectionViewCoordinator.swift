@@ -31,40 +31,39 @@ class SelectionViewCoordinator: NavigationCoordinator
     {
         selectionViewController.delegate = self
     }
+    
+    // Do not implement a stop function currently. Later it could be helpful to save data before closing the application.
         
 }
 
 extension SelectionViewCoordinator: SelectionViewControllerDelegate {
-    func timerButtonPressed() {
-        print("Hello Zack, glad to see you've finally done it")
+    func selectionButtonPressed(event: Event) {
+        print("Event: Selection View's timer button has been pressed. Display the stopwatch to the user.")
+        
+        if event == .timer
+        {
+            let timerViewCoordinator = TimerViewCoordinator()
+            self.pushCoordinator(timerViewCoordinator, animated: true)
+            childCoordinators.append(timerViewCoordinator)
+        }else
+        if event == .calendar
+        {
+            let calendarViewCoordinator = CalendarViewCoordinator()
+            self.pushCoordinator(calendarViewCoordinator, animated: true)
+            childCoordinators.append(calendarViewCoordinator)
+        }else
+        if event == .stats
+        {
+            let statsViewCoordinator = StatsViewCoordinator()
+            self.pushCoordinator(statsViewCoordinator, animated: true)
+            childCoordinators.append(statsViewCoordinator)
+        }
+        else
+        if event == .weights
+        {
+            let weightsViewCoordinator = WeightsViewCoordinator()
+            self.pushCoordinator(weightsViewCoordinator, animated: true)
+            childCoordinators.append(weightsViewCoordinator)
+        }
     }
 }
-
-//extension SelectionViewCoordinator: {
-//
-//    public func selectionTimerButtonDidPress(_ viewController: SelectionViewController)
-//    {
-//        // TODO: - Write this
-//    }
-//}
-
-//    private var timerViewCoordinator: TimerViewCoordinator?
-//
-//    init(navigationController: UINavigationController)
-//    {
-//        self.navigationController = navigationController
-//    }
-//
-//    func start() {
-//        let selectionViewController = SelectionViewController.instantiate("Main") as SelectionViewController
-//        navigationController!.pushViewController(selectionViewController, animated: true)
-//    }
-//
-//    func didSelectTimerButton()
-//    {
-//        let timerViewCoordinator = TimerViewCoordinator(navigationController: self.navigationController!)
-//
-//        timerViewCoordinator.start()
-//
-//        self.timerViewCoordinator = timerViewCoordinator
-//    }

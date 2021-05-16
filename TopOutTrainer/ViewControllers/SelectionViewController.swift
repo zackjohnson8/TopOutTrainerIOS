@@ -8,8 +8,15 @@
 import Foundation
 import UIKit
 
+public enum Event {
+    case timer,
+         weights,
+         stats,
+         calendar
+}
+
 protocol SelectionViewControllerDelegate: AnyObject {
-    func timerButtonPressed()
+    func selectionButtonPressed(event: Event)
 }
 
 final class SelectionViewController: UIViewController
@@ -26,10 +33,21 @@ final class SelectionViewController: UIViewController
         selectionModel = SelectionViewModel(self)
         selectionModel.delegate = self
         
-        setViewWindow()
-        setNavBar()
+        configUI()
     }
-    
+}
+
+private extension SelectionViewController
+{
+    /**
+     Summary: Handles calling all the configure UI functions
+     */
+    private func configUI()
+    {
+        setNavBar()
+        setViewWindow()
+    }
+
     /**
      Summary: Set the navigationItem's variables from the selectionModel
      */
@@ -60,8 +78,26 @@ extension SelectionViewController: SelectionViewModelDelegate
     func onSelectionButtonPressed(buttonType: ButtonType) {
         if buttonType == ButtonType.timer
         {
-            print("Hello23")
-            self.delegate?.timerButtonPressed()
+            print("SelectionViewModelDelegate call onSelectionButtonPressed")
+            self.delegate?.selectionButtonPressed(event: .timer)
+        }else
+        if buttonType == ButtonType.stats
+        {
+            print("SelectionViewModelDelegate call onSelectionButtonPressed")
+            self.delegate?.selectionButtonPressed(event: .stats)
+        }else
+        if buttonType == ButtonType.calendar
+        {
+            print("SelectionViewModelDelegate call onSelectionButtonPressed")
+            self.delegate?.selectionButtonPressed(event: .calendar)
+        }else
+        if buttonType == ButtonType.weights
+        {
+            print("SelectionViewModelDelegate call onSelectionButtonPressed")
+            self.delegate?.selectionButtonPressed(event: .weights)
+        }else
+        {
+            print("Error: Could not find the correct selection button")
         }
     }
     

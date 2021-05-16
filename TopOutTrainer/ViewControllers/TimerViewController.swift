@@ -5,22 +5,38 @@
 //  Created by Zachary Johnson on 2/13/21.
 //
 
-import Foundation
 import UIKit
+
+protocol TimerViewControllerDelegate: AnyObject
+{
+    func backPressed()
+}
 
 class TimerViewController: UIViewController
 {
     
-    override func viewDidLoad() {
+    weak var delegate:TimerViewControllerDelegate?
+    
+    var timerViewModel:TimerViewModel?
+    
+    override func viewDidLoad()
+    {
         super.viewDidLoad()
+        self.view.backgroundColor = .white
+        
+        configUI()
         
     }
+}
+
+extension TimerViewController
+{
     
-    private func setViewWindow()
+    func configUI()
     {
-        let view = UIView(frame: CGRect(x: 50, y: 50, width: 100, height: 100))
-        view.backgroundColor = .green
-        self.view.addSubview(view)
+        let timerViewModel = TimerViewModel(parent: self)
+        self.timerViewModel = timerViewModel
+        self.view.addSubview(timerViewModel.timerUIView)
     }
     
 }
