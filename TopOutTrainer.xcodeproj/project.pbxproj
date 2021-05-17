@@ -27,6 +27,7 @@
 		1416CAA0264C256D00BAB857 /* WeightsViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CA9F264C256D00BAB857 /* WeightsViewCoordinator.swift */; };
 		1416CAA2264C257800BAB857 /* StatsViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CAA1264C257800BAB857 /* StatsViewCoordinator.swift */; };
 		1416CAA4264C258A00BAB857 /* CaldendarViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CAA3264C258A00BAB857 /* CaldendarViewCoordinator.swift */; };
+		1416CAA62652E08700BAB857 /* PlayPauseUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CAA52652E08600BAB857 /* PlayPauseUIButton.swift */; };
 		142631B725BD02040083A04F /* SelectionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142631B625BD02040083A04F /* SelectionUIButton.swift */; };
 		142631CA25BD24CF0083A04F /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142631C925BD24CF0083A04F /* UIColor+Extensions.swift */; };
 		142999BE261BEE08006E698B /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142999BD261BEE08006E698B /* AppDelegateRouter.swift */; };
@@ -87,6 +88,7 @@
 		1416CA9F264C256D00BAB857 /* WeightsViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightsViewCoordinator.swift; sourceTree = "<group>"; };
 		1416CAA1264C257800BAB857 /* StatsViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewCoordinator.swift; sourceTree = "<group>"; };
 		1416CAA3264C258A00BAB857 /* CaldendarViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaldendarViewCoordinator.swift; sourceTree = "<group>"; };
+		1416CAA52652E08600BAB857 /* PlayPauseUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPauseUIButton.swift; sourceTree = "<group>"; };
 		142631B625BD02040083A04F /* SelectionUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionUIButton.swift; sourceTree = "<group>"; };
 		142631C925BD24CF0083A04F /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		142999BD261BEE08006E698B /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
@@ -269,6 +271,7 @@
 				1416CA8D264C220E00BAB857 /* WeightsUIView.swift */,
 				1416CA8F264C223E00BAB857 /* StatsUIView.swift */,
 				1416CA91264C225E00BAB857 /* CalendarUIView.swift */,
+				1416CAA52652E08600BAB857 /* PlayPauseUIButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -422,6 +425,7 @@
 				1416CA8E264C220E00BAB857 /* WeightsUIView.swift in Sources */,
 				1416CA842649AD2500BAB857 /* UIButton+Extensions.swift in Sources */,
 				1416CA862649B19F00BAB857 /* TimerViewCoordinator.swift in Sources */,
+				1416CAA62652E08700BAB857 /* PlayPauseUIButton.swift in Sources */,
 				1436EC9825B12582004720EF /* SelectionViewModel.swift in Sources */,
 				1416CA92264C225E00BAB857 /* CalendarUIView.swift in Sources */,
 				1416CA90264C223E00BAB857 /* StatsUIView.swift in Sources */,

@@ -9,7 +9,7 @@ import UIKit
 
 class TimerViewModel
 {
-    var timerUIView:TimerUIView
+    var timerUIView: TimerUIView
     
     init(parent: TimerViewController)
     {
