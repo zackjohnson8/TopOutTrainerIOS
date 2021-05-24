@@ -4,12 +4,14 @@
 //
 //  Created by Zachary Johnson on 5/17/21.
 //
-
 import Foundation
 import UIKit
 
 class PlayPauseUIButton: UIButton
 {
+    
+    var width_m: CGFloat!
+    var height_m: CGFloat!
     
     // Round button
     // Either has a play symbol |> or a pause symbol ||
@@ -19,16 +21,11 @@ class PlayPauseUIButton: UIButton
     {
         super.init(frame: .zero)
         
-        self.translatesAutoresizingMaskIntoConstraints = false
+        self.width_m = width
+        self.height_m = height
         
-        self.setImage(UIImage(systemName: "play", withConfiguration: UIImage.SymbolConfiguration(weight:.regular)), for: .normal)
-        self.imageEdgeInsets = UIEdgeInsets(top: height / 10, left: width / 10, bottom: height / 10, right: width / 10)
-        self.contentVerticalAlignment = .fill
-        self.contentHorizontalAlignment = .fill
-        self.tintColor = .gray
-        self.backgroundColor = .primaryColor()
-        self.layer.cornerRadius = width * 0.5
-
+        setUI()
+        setShadow()
     }
     
     required init?(coder: NSCoder)
@@ -36,17 +33,57 @@ class PlayPauseUIButton: UIButton
         fatalError("init(coder:) has not been implemented")
     }
     
-}
-
-extension PlayPauseUIButton
-{
-    public func setConstraints(label: UILabel)
+    private func setUI()
     {
-        self.
+        self.translatesAutoresizingMaskIntoConstraints = false
+        self.layer.cornerRadius = width_m! * 0.5
+        self.contentEdgeInsets = UIEdgeInsets(top: height_m/4, left: width_m/4, bottom: height_m/4, right: width_m/4)
+
+        let image = UIImage(systemName: "play", withConfiguration: UIImage.SymbolConfiguration(weight:.regular))
+        self.setImage(image, for: .normal)
         
-        self.widthAnchor.constraint(equalTo: self.superview.widthAnchor, multiplier: 0.2).isActive = true
-        self.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2).isActive = true
-        self.topAnchor.constraint(equalTo: label.bottomAnchor).isActive = true
-        self.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        self.contentVerticalAlignment = .fill
+        self.contentHorizontalAlignment = .fill
+        self.tintColor = .gray
+        self.backgroundColor = .primaryColor()
+        
+        self.setNeedsLayout()
     }
+    
+    private func setShadow()
+    {
+        self.layer.shadowColor = UIColor.gray.cgColor
+        self.layer.shadowOffset = .init(width: 0.0, height: 0.0)
+        self.layer.shadowRadius = width_m * 0.3
+        self.layer.shadowOpacity = 1.0
+        
+        self.setNeedsLayout()
+    }
+    
+    public func buttonPressedDown()
+    {
+        print("hello1")
+        
+        self.layer.shadowOffset = .init(width: 2.0, height: 2.0)
+        self.layer.shadowRadius = width_m * 0.1
+        //self.
+        
+        self.layoutIfNeeded()
+    }
+    
+    public func buttonReleased()
+    {
+        print("hello2")
+        
+        self.layer.shadowRadius = width_m * 0.3
+        
+        self.layoutIfNeeded()
+    }
+    
+    public func buttonCancel()
+    {
+        self.layer.shadowRadius = width_m * 0.3
+        self.layoutIfNeeded()
+    }
+    
 }

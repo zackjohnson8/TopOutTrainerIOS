@@ -28,6 +28,8 @@
 		1416CAA2264C257800BAB857 /* StatsViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CAA1264C257800BAB857 /* StatsViewCoordinator.swift */; };
 		1416CAA4264C258A00BAB857 /* CaldendarViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CAA3264C258A00BAB857 /* CaldendarViewCoordinator.swift */; };
 		1416CAA62652E08700BAB857 /* PlayPauseUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CAA52652E08600BAB857 /* PlayPauseUIButton.swift */; };
+		1416CAA8265B09F700BAB857 /* ResetTimerUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CAA7265B09F700BAB857 /* ResetTimerUIButton.swift */; };
+		1416CAAA265B382900BAB857 /* UIImage+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CAA9265B382900BAB857 /* UIImage+Extensions.swift */; };
 		142631B725BD02040083A04F /* SelectionUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142631B625BD02040083A04F /* SelectionUIButton.swift */; };
 		142631CA25BD24CF0083A04F /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142631C925BD24CF0083A04F /* UIColor+Extensions.swift */; };
 		142999BE261BEE08006E698B /* AppDelegateRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 142999BD261BEE08006E698B /* AppDelegateRouter.swift */; };
@@ -89,6 +91,8 @@
 		1416CAA1264C257800BAB857 /* StatsViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewCoordinator.swift; sourceTree = "<group>"; };
 		1416CAA3264C258A00BAB857 /* CaldendarViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CaldendarViewCoordinator.swift; sourceTree = "<group>"; };
 		1416CAA52652E08600BAB857 /* PlayPauseUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayPauseUIButton.swift; sourceTree = "<group>"; };
+		1416CAA7265B09F700BAB857 /* ResetTimerUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResetTimerUIButton.swift; sourceTree = "<group>"; };
+		1416CAA9265B382900BAB857 /* UIImage+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extensions.swift"; sourceTree = "<group>"; };
 		142631B625BD02040083A04F /* SelectionUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionUIButton.swift; sourceTree = "<group>"; };
 		142631C925BD24CF0083A04F /* UIColor+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		142999BD261BEE08006E698B /* AppDelegateRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateRouter.swift; sourceTree = "<group>"; };
@@ -168,6 +172,7 @@
 				142631C925BD24CF0083A04F /* UIColor+Extensions.swift */,
 				1416C9CD2640892B00BAB857 /* UIView+Extensions.swift */,
 				1416CA832649AD2500BAB857 /* UIButton+Extensions.swift */,
+				1416CAA9265B382900BAB857 /* UIImage+Extensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -272,6 +277,7 @@
 				1416CA8F264C223E00BAB857 /* StatsUIView.swift */,
 				1416CA91264C225E00BAB857 /* CalendarUIView.swift */,
 				1416CAA52652E08600BAB857 /* PlayPauseUIButton.swift */,
+				1416CAA7265B09F700BAB857 /* ResetTimerUIButton.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -422,6 +428,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1416CAAA265B382900BAB857 /* UIImage+Extensions.swift in Sources */,
 				1416CA8E264C220E00BAB857 /* WeightsUIView.swift in Sources */,
 				1416CA842649AD2500BAB857 /* UIButton+Extensions.swift in Sources */,
 				1416CA862649B19F00BAB857 /* TimerViewCoordinator.swift in Sources */,
@@ -439,6 +446,7 @@
 				14D13F7825AA730F00CF6FF1 /* Coordinator.swift in Sources */,
 				1416CA96264C232200BAB857 /* StatsViewModel.swift in Sources */,
 				14D13F6F25AA71E600CF6FF1 /* AppCoordinator.swift in Sources */,
+				1416CAA8265B09F700BAB857 /* ResetTimerUIButton.swift in Sources */,
 				146934EB25A2605B00878DB9 /* TopOutTrainer.xcdatamodeld in Sources */,
 				1416CAA0264C256D00BAB857 /* WeightsViewCoordinator.swift in Sources */,
 				14D13F8225AA776600CF6FF1 /* SelectionViewController.swift in Sources */,

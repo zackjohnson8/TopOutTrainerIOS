@@ -16,9 +16,8 @@ class TimerUIView: UIView
     
     var timeLabel: UILabel!
     var playPauseButton: PlayPauseUIButton!
+    var resetTimerButton: ResetTimerUIButton!
     var resetButton: UIButton!
-    
-    private var widthAnchor_m: NSLayoutConstraint!
     
     required init(parent: TimerViewController)
     {
@@ -36,7 +35,7 @@ class TimerUIView: UIView
         super.didMoveToWindow()
         self.backgroundColor = .primaryColor()
         
-        setConstraints()
+        setViewConstraints()
         setUI()
     }
 }
@@ -45,49 +44,107 @@ private extension TimerUIView
 {
     private func setUI()
     {
-        // Needs:
-        //  * Play/Pause button
-        //  * Reset button
-        //  * Label for timer
-        //  * Extra info: I've read that it's much better to use an existing library for timer.
-        
-        
-        // LABEL
-        timeLabel = UILabel()
-        timeLabel.backgroundColor = .blue
-        timeLabel.text = "00:00:00.0"
-        timeLabel.font = timeLabel.font.withSize(100)
-        timeLabel.textAlignment = .center
-        timeLabel.numberOfLines = 1
-        timeLabel.adjustsFontSizeToFitWidth = true
-        timeLabel.minimumScaleFactor = 0.5
-        self.addSubview(timeLabel)
-        timeLabel.translatesAutoresizingMaskIntoConstraints = false
-        timeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        timeLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
-        timeLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9).isActive = true
-
-        
-        // Play/Pause Button
-        // Style will be round with just a symbol to represent play or pause
-        let buttonWidth: CGFloat = self.bounds.size.width * 0.2
-        let buttonHeight: CGFloat = self.bounds.size.width * 0.2
-        playPauseButton = PlayPauseUIButton(width: buttonWidth, height: buttonHeight)
-        self.addSubview(playPauseButton)
-        playPauseButton.setConstraints()
+        setTimeLabel()
+        setPlayButton()
+        setResetButton()
         
         self.setNeedsLayout()
     }
     
-    private func setConstraints()
+    private func setViewConstraints()
     {
         translatesAutoresizingMaskIntoConstraints = false
-        
-        widthAnchor_m = self.widthAnchor.constraint(equalTo: parent.view.widthAnchor, constant: 5)
-        widthAnchor_m.isActive = true
+        self.widthAnchor.constraint(equalTo: parent.view.widthAnchor, constant: 5).isActive = true
         self.heightAnchor.constraint(equalTo: parent.view.heightAnchor, constant: 0).isActive = true
         self.topAnchor.constraint(equalTo: parent.view.topAnchor, constant: 0).isActive = true
         self.centerXAnchor.constraint(equalTo: parent.view.centerXAnchor).isActive = true
+        
         self.layoutIfNeeded()
+    }
+    
+    private func setTimeLabel()
+    {
+        timeLabel = {
+            let label = UILabel()
+            label.backgroundColor = .primaryColor()
+            label.text = "00:00:00.0"
+            label.font = label.font.withSize(100)
+            label.textAlignment = .center
+            label.numberOfLines = 1
+            label.adjustsFontSizeToFitWidth = true
+            label.minimumScaleFactor = 0.5
+            return label
+        }()
+        
+        self.addSubview(timeLabel)
+        
+        timeLabel.translatesAutoresizingMaskIntoConstraints = false
+        timeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
+        timeLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        timeLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9).isActive = true
+    }
+    
+    private func setPlayButton()
+    {
+        let buttonWidth: CGFloat = self.bounds.size.width * 0.2
+        let buttonHeight: CGFloat = self.bounds.size.width * 0.2
+        
+        let buttonXConstant: CGFloat = -(self.bounds.size.width * 0.2)
+        
+        playPauseButton = PlayPauseUIButton(width: buttonWidth, height: buttonHeight)
+        playPauseButton.addTarget(self, action: #selector(self.playButtonClicked), for: .touchDown)
+        playPauseButton.addTarget(self, action: #selector(self.playButtonReleased), for: .touchUpInside)
+        playPauseButton.addTarget(self, action: #selector(self.playButtonCancel), for: .touchDragOutside)
+        self.addSubview(playPauseButton)
+        
+        playPauseButton.translatesAutoresizingMaskIntoConstraints = false
+        playPauseButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2).isActive = true
+        playPauseButton.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2).isActive = true
+        playPauseButton.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 25).isActive = true
+        playPauseButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: buttonXConstant).isActive = true
+    }
+    
+    private func setResetButton()
+    {
+        let buttonWidth: CGFloat = self.bounds.size.width * 0.2
+        let buttonHeight: CGFloat = self.bounds.size.width * 0.2
+        
+        let buttonXConstant: CGFloat = self.bounds.size.width * 0.2
+
+        resetTimerButton = ResetTimerUIButton(width: buttonWidth, height: buttonHeight)
+        self.addSubview(resetTimerButton)
+        
+        resetTimerButton.translatesAutoresizingMaskIntoConstraints = false
+        resetTimerButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2).isActive = true
+        resetTimerButton.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2).isActive = true
+        resetTimerButton.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 25).isActive = true
+        resetTimerButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: buttonXConstant).isActive = true
+    }
+    
+    @objc func playButtonClicked()
+    {
+        
+        // Start the animation
+        UIView.animate(withDuration: 0.2,
+                       animations: {self.playPauseButton.buttonPressedDown()}
+        )
+        
+        print("Play Button Pressed")
+    }
+    
+    @objc func playButtonReleased()
+    {
+        UIView.animate(withDuration: 0.2,
+                       animations: {self.playPauseButton.buttonReleased()}
+        )
+        
+        print("Play Button Released")
+    }
+    
+    @objc func playButtonCancel()
+    {
+        UIView.animate(withDuration: 0.2,
+                       animations: {self.playPauseButton.buttonCancel()}
+        )
     }
 }
