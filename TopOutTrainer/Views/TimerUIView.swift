@@ -19,6 +19,15 @@ class TimerUIView: UIView
     var resetTimerButton: ResetTimerUIButton!
     var resetButton: UIButton!
     
+    var playButtonPressed: Bool = false
+    var resetButtonPressed: Bool = false
+    
+    @IBOutlet weak var playButtonWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var playButtonHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var resetButtonWidthConstraint: NSLayoutConstraint!
+    @IBOutlet weak var resetButtonHeightConstraint: NSLayoutConstraint!
+
+    
     required init(parent: TimerViewController)
     {
         super.init(frame: CGRect.zero)
@@ -80,7 +89,7 @@ private extension TimerUIView
         
         timeLabel.translatesAutoresizingMaskIntoConstraints = false
         timeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
-        timeLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor).isActive = true
+        timeLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -50).isActive = true
         timeLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9).isActive = true
     }
     
@@ -98,8 +107,10 @@ private extension TimerUIView
         self.addSubview(playPauseButton)
         
         playPauseButton.translatesAutoresizingMaskIntoConstraints = false
-        playPauseButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2).isActive = true
-        playPauseButton.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2).isActive = true
+        playButtonWidthConstraint = playPauseButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2)
+        playButtonHeightConstraint = playPauseButton.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2)
+        playButtonWidthConstraint.isActive = true
+        playButtonHeightConstraint.isActive = true
         playPauseButton.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 25).isActive = true
         playPauseButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: buttonXConstant).isActive = true
     }
@@ -112,11 +123,16 @@ private extension TimerUIView
         let buttonXConstant: CGFloat = self.bounds.size.width * 0.2
 
         resetTimerButton = ResetTimerUIButton(width: buttonWidth, height: buttonHeight)
+        resetTimerButton.addTarget(self, action: #selector(self.resetButtonClicked), for: .touchDown)
+        resetTimerButton.addTarget(self, action: #selector(self.resetButtonReleased), for: .touchUpInside)
+        resetTimerButton.addTarget(self, action: #selector(self.resetButtonCancel), for: .touchDragOutside)
         self.addSubview(resetTimerButton)
         
         resetTimerButton.translatesAutoresizingMaskIntoConstraints = false
-        resetTimerButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2).isActive = true
-        resetTimerButton.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2).isActive = true
+        resetButtonWidthConstraint = resetTimerButton.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2)
+        resetButtonHeightConstraint = resetTimerButton.heightAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.2)
+        resetButtonWidthConstraint.isActive = true
+        resetButtonHeightConstraint.isActive = true
         resetTimerButton.topAnchor.constraint(equalTo: timeLabel.bottomAnchor, constant: 25).isActive = true
         resetTimerButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: buttonXConstant).isActive = true
     }
@@ -124,27 +140,87 @@ private extension TimerUIView
     @objc func playButtonClicked()
     {
         
-        // Start the animation
-        UIView.animate(withDuration: 0.2,
-                       animations: {self.playPauseButton.buttonPressedDown()}
+        playButtonPressed = true
+        UIView.animate(withDuration: 0.1,
+                       animations: {
+                        self.playButtonWidthConstraint.constant -= 10
+                        self.playButtonHeightConstraint.constant -= 10
+                        self.playPauseButton.layer.cornerRadius = (self.playPauseButton.width_m - 10) * 0.5
+                        self.playPauseButton.buttonPressedDown()
+                        self.layoutIfNeeded()
+                       }
         )
-        
-        print("Play Button Pressed")
     }
     
     @objc func playButtonReleased()
     {
-        UIView.animate(withDuration: 0.2,
-                       animations: {self.playPauseButton.buttonReleased()}
+        playButtonPressed = false
+        UIView.animate(withDuration: 0.1,
+                       animations: {
+                        self.playButtonWidthConstraint.constant += 10
+                        self.playButtonHeightConstraint.constant += 10
+                        self.playPauseButton.buttonReleased()
+                        self.layoutIfNeeded()
+                       }
         )
-        
-        print("Play Button Released")
     }
     
     @objc func playButtonCancel()
     {
-        UIView.animate(withDuration: 0.2,
-                       animations: {self.playPauseButton.buttonCancel()}
+        if(playButtonPressed)
+        {
+            playButtonPressed = false
+            UIView.animate(withDuration: 0.1,
+                           animations: {
+                            self.playButtonWidthConstraint.constant += 10
+                            self.playButtonHeightConstraint.constant += 10
+                            self.playPauseButton.buttonCancel()
+                            self.layoutIfNeeded()
+                           }
+            )
+        }
+    }
+    
+    @objc func resetButtonClicked()
+    {
+        resetButtonPressed = true
+        UIView.animate(withDuration: 0.1,
+                       animations: {
+                        self.resetButtonWidthConstraint.constant -= 10
+                        self.resetButtonHeightConstraint.constant -= 10
+                        self.resetTimerButton.layer.cornerRadius = (self.resetTimerButton.width_m - 10) * 0.5
+                        self.resetTimerButton.buttonPressedDown()
+                        self.layoutIfNeeded()
+                       }
         )
+    }
+    
+    @objc func resetButtonReleased()
+    {
+        resetButtonPressed = false
+        UIView.animate(withDuration: 0.1,
+                       animations: {
+                        self.resetButtonWidthConstraint.constant += 10
+                        self.resetButtonHeightConstraint.constant += 10
+                        self.resetTimerButton.buttonReleased()
+                        self.layoutIfNeeded()
+                       }
+        )
+    }
+    
+    @objc func resetButtonCancel()
+    {
+        if(resetButtonPressed)
+        {
+            resetButtonPressed = false
+            UIView.animate(withDuration: 0.1,
+                           animations: {
+                            self.resetButtonWidthConstraint.constant += 10
+                            self.resetButtonHeightConstraint.constant += 10
+                            self.resetTimerButton.buttonCancel()
+                            self.layoutIfNeeded()
+                           }
+            )
+        }
     }
 }

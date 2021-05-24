@@ -10,8 +10,8 @@ import UIKit
 class PlayPauseUIButton: UIButton
 {
     
-    var width_m: CGFloat!
-    var height_m: CGFloat!
+    public var width_m: CGFloat!
+    public var height_m: CGFloat!
     
     // Round button
     // Either has a play symbol |> or a pause symbol ||
@@ -62,28 +62,21 @@ class PlayPauseUIButton: UIButton
     
     public func buttonPressedDown()
     {
-        print("hello1")
-        
         self.layer.shadowOffset = .init(width: 2.0, height: 2.0)
-        self.layer.shadowRadius = width_m * 0.1
-        //self.
-        
-        self.layoutIfNeeded()
+        self.layer.shadowRadius = width_m * 0.2
     }
     
     public func buttonReleased()
     {
-        print("hello2")
-        
+        self.layer.shadowOffset = .init(width: 0.0, height: 0.0)
         self.layer.shadowRadius = width_m * 0.3
-        
-        self.layoutIfNeeded()
+        self.layer.cornerRadius = width_m * 0.5
     }
     
     public func buttonCancel()
     {
+        self.layer.shadowOffset = .init(width: 0.0, height: 0.0)
         self.layer.shadowRadius = width_m * 0.3
-        self.layoutIfNeeded()
+        self.layer.cornerRadius = width_m * 0.5
     }
-    
 }
