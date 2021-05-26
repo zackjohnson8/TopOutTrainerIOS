@@ -13,6 +13,7 @@ class TimerUIView: UIView
     
     var timerOn = false
     var timer = Timer()
+    var timeDisplayed = 0.0
     
     var timeLabel: UILabel!
     var playPauseButton: PlayPauseUIButton!
@@ -32,6 +33,8 @@ class TimerUIView: UIView
     {
         super.init(frame: CGRect.zero)
         self.parent = parent
+        
+        
     }
     
     required init?(coder: NSCoder)
@@ -74,16 +77,13 @@ private extension TimerUIView
     private func setTimeLabel()
     {
         timeLabel = {
-            let label = UILabel()
+            let label = UILabel(frame: CGRect.init(x: 0, y: 0, width: self.bounds.size.width, height: self.bounds.size.height * 0.25))
             label.backgroundColor = .primaryColor()
-            label.text = "00:00:00.0"
-            label.font = label.font.withSize(100)
-            label.textAlignment = .center
+            label.font = label.font.withSize(self.bounds.size.width * 0.217)
             label.numberOfLines = 1
-            label.adjustsFontSizeToFitWidth = true
-            label.minimumScaleFactor = 0.5
             return label
         }()
+        self.printTimeToLabel()
         
         self.addSubview(timeLabel)
         
@@ -91,6 +91,7 @@ private extension TimerUIView
         timeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor).isActive = true
         timeLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor, constant: -50).isActive = true
         timeLabel.widthAnchor.constraint(equalTo: self.widthAnchor, multiplier: 0.9).isActive = true
+        timeLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.25).isActive = true
     }
     
     private func setPlayButton()
@@ -137,9 +138,44 @@ private extension TimerUIView
         resetTimerButton.centerXAnchor.constraint(equalTo: self.centerXAnchor, constant: buttonXConstant).isActive = true
     }
     
-    @objc func playButtonClicked()
+    private func printTimeToLabel()
     {
         
+        var timeRemaining: Int = Int(timeDisplayed)
+        
+        let milliseconds = Int(timeDisplayed.truncatingRemainder(dividingBy: 1) * 100)
+        let seconds = timeRemaining % 60
+        timeRemaining = timeRemaining / 60
+        let minutes = timeRemaining % 60
+        timeRemaining = timeRemaining / 60
+        let hours = timeRemaining
+        
+        // 00:00:00.00
+        var millisecondsString = String(milliseconds)
+        var secondsString = String(seconds)
+        var minutesString = String(minutes)
+        var hoursString = String(hours)
+        
+        millisecondsString.count == 1 ? millisecondsString = "0\(millisecondsString)": ()
+        secondsString.count == 1 ? secondsString = "0\(secondsString)": ()
+        minutesString.count == 1 ? minutesString = "0\(minutesString)": ()
+        hoursString.count == 1 ? hoursString = "0\(hoursString)": ()
+        
+        let stringTime: String?
+        if(hours < 1)
+        {
+            stringTime = "\(minutesString):\(secondsString).\(millisecondsString)"
+        }else
+        {
+            stringTime = "\(hoursString):\(minutesString):\(secondsString)"
+        }
+
+        timeLabel.text = stringTime
+        
+    }
+    
+    @objc func playButtonClicked(_ sender: Any)
+    {
         playButtonPressed = true
         UIView.animate(withDuration: 0.1,
                        animations: {
@@ -152,8 +188,19 @@ private extension TimerUIView
         )
     }
     
-    @objc func playButtonReleased()
+    @objc func playButtonReleased(_ sender: Any)
     {
+        if(timerOn)
+        {
+            timer.invalidate()
+            playPauseButton.setBackgroundImage(.PLAY)
+        }else
+        {
+            timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(self.startTimer), userInfo: nil, repeats: true)
+            playPauseButton.setBackgroundImage(.PAUSE)
+        }
+        timerOn = !timerOn
+        
         playButtonPressed = false
         UIView.animate(withDuration: 0.1,
                        animations: {
@@ -165,7 +212,7 @@ private extension TimerUIView
         )
     }
     
-    @objc func playButtonCancel()
+    @objc func playButtonCancel(_ sender: Any)
     {
         if(playButtonPressed)
         {
@@ -181,7 +228,7 @@ private extension TimerUIView
         }
     }
     
-    @objc func resetButtonClicked()
+    @objc func resetButtonClicked(_ sender: Any)
     {
         resetButtonPressed = true
         UIView.animate(withDuration: 0.1,
@@ -195,8 +242,10 @@ private extension TimerUIView
         )
     }
     
-    @objc func resetButtonReleased()
+    @objc func resetButtonReleased(_ sender: Any)
     {
+        timeDisplayed = 0.0
+        self.printTimeToLabel()
         resetButtonPressed = false
         UIView.animate(withDuration: 0.1,
                        animations: {
@@ -208,7 +257,7 @@ private extension TimerUIView
         )
     }
     
-    @objc func resetButtonCancel()
+    @objc func resetButtonCancel(_ sender: Any)
     {
         if(resetButtonPressed)
         {
@@ -222,5 +271,12 @@ private extension TimerUIView
                            }
             )
         }
+    }
+    
+    @objc func startTimer(){
+        timeDisplayed += 0.01
+        self.printTimeToLabel()
+        
+        self.layoutIfNeeded()
     }
 }

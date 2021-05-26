@@ -7,6 +7,11 @@
 import Foundation
 import UIKit
 
+enum ButtonImage
+{
+    case PLAY, PAUSE
+}
+
 class PlayPauseUIButton: UIButton
 {
     
@@ -33,14 +38,26 @@ class PlayPauseUIButton: UIButton
         fatalError("init(coder:) has not been implemented")
     }
     
+    public func setBackgroundImage(_ buttonImage: ButtonImage)
+    {
+        switch buttonImage
+        {
+            case .PLAY:
+                let image = UIImage(systemName: "play", withConfiguration: UIImage.SymbolConfiguration(weight:.regular))
+                self.setImage(image, for: .normal)
+            case .PAUSE:
+                let image = UIImage(systemName: "pause", withConfiguration: UIImage.SymbolConfiguration(weight:.regular))
+                self.setImage(image, for: .normal)
+        }
+    }
+    
     private func setUI()
     {
         self.translatesAutoresizingMaskIntoConstraints = false
         self.layer.cornerRadius = width_m! * 0.5
         self.contentEdgeInsets = UIEdgeInsets(top: height_m/4, left: width_m/4, bottom: height_m/4, right: width_m/4)
 
-        let image = UIImage(systemName: "play", withConfiguration: UIImage.SymbolConfiguration(weight:.regular))
-        self.setImage(image, for: .normal)
+        self.setBackgroundImage(.PLAY)
         
         self.contentVerticalAlignment = .fill
         self.contentHorizontalAlignment = .fill
