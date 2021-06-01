@@ -1,5 +1,5 @@
 //
-//  SelectionUIButtons.swift
+//  StatsUIButtons.swift
 //  TopOutTrainer
 //
 //  Created by Zachary Johnson on 1/23/21.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-class SelectionUIButton: UIButton
+class StatsUIButton: UIButton
 {
     public enum ARRANGEMENT {
         case top

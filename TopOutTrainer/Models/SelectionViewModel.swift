@@ -1,5 +1,5 @@
 //
-//  SelectionModel.swift
+//  StatsModel.swift
 //  TopOutTrainer
 //
 //  Created by Zachary Johnson on 1/14/21.
@@ -15,28 +15,28 @@ public enum ButtonType {
          calendar
 }
 
-protocol SelectionViewModelDelegate: AnyObject {
-    func onSelectionButtonPressed(buttonType: ButtonType)
+protocol StatsViewModelDelegate: AnyObject {
+    func onStatsButtonPressed(buttonType: ButtonType)
 }
 
-class SelectionViewModel
+class StatsViewModel
 {
     var rightBarItem: UIBarButtonItem!
-    var selectionView: SelectionUIView! // Holds the Selection Buttons
+    var statsView: StatsUIView! // Holds the Stats Buttons
     var title: String!
     
-    weak var delegate: SelectionViewModelDelegate?
+    weak var delegate: StatsViewModelDelegate?
     
-    init(_ parent: SelectionViewController)
+    init(_ parent: StatsViewController)
     {
         createRightBarItem()
-        createSelectionView(parent)
+        createStatsView(parent)
     }
     
-    private func createSelectionView(_ parent: SelectionViewController)
+    private func createStatsView(_ parent: StatsViewController)
     {
-        selectionView = SelectionUIView(parent: parent)
-        selectionView.delegate = self
+        statsView = StatsUIView(parent: parent)
+        statsView.delegate = self
     }
     
     private func createRightBarItem()
@@ -55,22 +55,22 @@ class SelectionViewModel
     }
 }
 
-extension SelectionViewModel: SelectionUIViewDelegate
+extension StatsViewModel: StatsUIViewDelegate
 {
     func onTimerButtonPressed() {
-        self.delegate?.onSelectionButtonPressed(buttonType: ButtonType.timer)
+        self.delegate?.onStatsButtonPressed(buttonType: ButtonType.timer)
     }
     
     func onWeightsButtonPressed() {
-        self.delegate?.onSelectionButtonPressed(buttonType: ButtonType.weights)
+        self.delegate?.onStatsButtonPressed(buttonType: ButtonType.weights)
     }
     
     func onStatsButtonPressed() {
-        self.delegate?.onSelectionButtonPressed(buttonType: ButtonType.stats)
+        self.delegate?.onStatsButtonPressed(buttonType: ButtonType.stats)
     }
     
     func onCalendarButtonPressed() {
-        self.delegate?.onSelectionButtonPressed(buttonType: ButtonType.calendar)
+        self.delegate?.onStatsButtonPressed(buttonType: ButtonType.calendar)
     }
     
     

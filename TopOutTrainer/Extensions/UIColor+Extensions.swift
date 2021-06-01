@@ -15,7 +15,7 @@ public extension UIColor
         return UIColor.systemGray5
     }
     
-    static func selectionGreen() -> UIColor
+    static func statsGreen() -> UIColor
     {
         return UIColor(red: 0/255, green: 199/255, blue: 9/255, alpha: 1.0)
     }
