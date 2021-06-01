@@ -10,7 +10,7 @@ import UIKit
 extension UIButton {
     
     /**
-     Summary: I wanted an extension to UIButton to apply a gradient to the selection buttons on the root screen
+     Summary: I wanted an extension to UIButton to apply a gradient to the main buttons on the root screen
      */
     func applyGradient(colors: [CGColor]) {
             self.backgroundColor = nil

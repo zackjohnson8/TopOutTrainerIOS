@@ -13,10 +13,10 @@ final class AppCoordinator: PresentationCoordinator {
     }
     
     func start() {
-        let selectionCoordinator = SelectionViewCoordinator()
-        addChildCoordinator(selectionCoordinator)
-        selectionCoordinator.start()
-        rootViewController.set(childViewController: selectionCoordinator.rootViewController)
+        let mainCoordinator = MainViewCoordinator()
+        addChildCoordinator(mainCoordinator)
+        mainCoordinator.start()
+        rootViewController.set(childViewController: mainCoordinator.rootViewController)
     }
     
 }

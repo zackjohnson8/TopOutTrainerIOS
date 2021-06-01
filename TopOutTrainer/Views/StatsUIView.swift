@@ -19,7 +19,7 @@ class StatsUIView: UIView
     
     required init?(coder: NSCoder)
     {
-        fatalError("Fatal error in SelectionUIViewModel")
+        fatalError("Fatal error in MainUIViewModel")
     }
     
     override func didMoveToWindow()

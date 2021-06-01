@@ -19,7 +19,7 @@ public class AppDelegateRouter: Router {
     
     public func present(_ viewController: UIViewController, animated: Bool, onDismissed: (()->Void)?)
     {
-        window.rootViewController = viewController // New copy of the SelectionViewController is submitted to the rootViewController
+        window.rootViewController = viewController // New copy of the MainViewController is submitted to the rootViewController
         window.makeKeyAndVisible()
     }
     
