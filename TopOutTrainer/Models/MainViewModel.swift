@@ -64,7 +64,6 @@ class MainViewModel
             // Creation
         tripleLineImageView = UIImageView(image: UIImage(systemName: "line.horizontal.3.decrease"))
         tripleLineImageView.tintColor = .secondaryColor()
-        tripleLineImageView.backgroundColor = .green
             // Constraints
         self.lowerView.addSubview(tripleLineImageView)
         tripleLineImageView.translatesAutoresizingMaskIntoConstraints = false

@@ -22,7 +22,7 @@ class CalendarView: UIView
     required override init(frame: CGRect)
     {
         super.init(frame: frame)
-        self.backgroundColor = .blue
+        self.backgroundColor = .secondaryColor()
     }
     
     required init?(coder: NSCoder) {
