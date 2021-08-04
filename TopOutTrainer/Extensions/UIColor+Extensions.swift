@@ -12,6 +12,11 @@ public extension UIColor
 {
     static func primaryColor() -> UIColor
     {
+        return UIColor.systemGray2
+    }
+    
+    static func secondaryColor() -> UIColor
+    {
         return UIColor.systemGray5
     }
     

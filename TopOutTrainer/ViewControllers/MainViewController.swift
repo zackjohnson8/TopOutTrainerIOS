@@ -30,9 +30,7 @@ final class MainViewController: UIViewController
         super.viewDidLoad()
         self.view.backgroundColor = .primaryColor()
         
-        mainModel = MainViewModel(self)
-        mainModel.delegate = self
-        
+        setViewModel()
         setUI()
     }
 }
@@ -67,6 +65,12 @@ private extension MainViewController
     {
         mainView = mainModel.mainView
         self.view.addSubview(mainView)
+    }
+    
+    private func setViewModel()
+    {
+        mainModel = MainViewModel(self)
+        mainModel.delegate = self
     }
     
 }

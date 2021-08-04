@@ -46,6 +46,9 @@
 		148491D9261B992C00518405 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148491D8261B992C00518405 /* Router.swift */; };
 		148491E1261B9BA500518405 /* NavigationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 148491E0261B9BA500518405 /* NavigationRouter.swift */; };
 		149B184125B4CCBD00F8B325 /* MainUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 149B184025B4CCBD00F8B325 /* MainUIView.swift */; };
+		14AB0F412666E5FC002A1F54 /* LowerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AB0F402666E5FC002A1F54 /* LowerUIView.swift */; };
+		14B0752526B7260700BC28D1 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0752426B7260700BC28D1 /* CalendarView.swift */; };
+		14B0752A26B9DB9600BC28D1 /* UIPanGestureRecognizerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0752926B9DB9600BC28D1 /* UIPanGestureRecognizerMainView.swift */; };
 		14D13F6F25AA71E600CF6FF1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D13F6E25AA71E600CF6FF1 /* AppCoordinator.swift */; };
 		14D13F7825AA730F00CF6FF1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D13F7725AA730F00CF6FF1 /* Coordinator.swift */; };
 		14D13F7D25AA772200CF6FF1 /* MainViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D13F7C25AA772200CF6FF1 /* MainViewCoordinator.swift */; };
@@ -115,6 +118,9 @@
 		148491D8261B992C00518405 /* Router.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
 		148491E0261B9BA500518405 /* NavigationRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationRouter.swift; sourceTree = "<group>"; };
 		149B184025B4CCBD00F8B325 /* MainUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainUIView.swift; sourceTree = "<group>"; };
+		14AB0F402666E5FC002A1F54 /* LowerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerUIView.swift; sourceTree = "<group>"; };
+		14B0752426B7260700BC28D1 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		14B0752926B9DB9600BC28D1 /* UIPanGestureRecognizerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPanGestureRecognizerMainView.swift; sourceTree = "<group>"; };
 		14D13F6E25AA71E600CF6FF1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		14D13F7725AA730F00CF6FF1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		14D13F7C25AA772200CF6FF1 /* MainViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCoordinator.swift; sourceTree = "<group>"; };
@@ -214,6 +220,7 @@
 		146934DF25A2605B00878DB9 /* TopOutTrainer */ = {
 			isa = PBXGroup;
 			children = (
+				14B0752826B9DB6F00BC28D1 /* Events */,
 				149B184825B514C300F8B325 /* Views */,
 				1436EC9625B12565004720EF /* Models */,
 				148491D7261B98FF00518405 /* Routers */,
@@ -270,8 +277,7 @@
 		149B184825B514C300F8B325 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				142631B625BD02040083A04F /* MainUIButton.swift */,
-				149B184025B4CCBD00F8B325 /* MainUIView.swift */,
+				14AB0F3F2666E5A4002A1F54 /* MainView */,
 				1416CA8B2649F55100BAB857 /* TimerUIView.swift */,
 				1416CA8D264C220E00BAB857 /* WeightsUIView.swift */,
 				1416CA8F264C223E00BAB857 /* StatsUIView.swift */,
@@ -280,6 +286,25 @@
 				1416CAA7265B09F700BAB857 /* ResetTimerUIButton.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		14AB0F3F2666E5A4002A1F54 /* MainView */ = {
+			isa = PBXGroup;
+			children = (
+				142631B625BD02040083A04F /* MainUIButton.swift */,
+				149B184025B4CCBD00F8B325 /* MainUIView.swift */,
+				14AB0F402666E5FC002A1F54 /* LowerUIView.swift */,
+				14B0752426B7260700BC28D1 /* CalendarView.swift */,
+			);
+			path = MainView;
+			sourceTree = "<group>";
+		};
+		14B0752826B9DB6F00BC28D1 /* Events */ = {
+			isa = PBXGroup;
+			children = (
+				14B0752926B9DB9600BC28D1 /* UIPanGestureRecognizerMainView.swift */,
+			);
+			path = Events;
 			sourceTree = "<group>";
 		};
 		14D13F6D25AA719E00CF6FF1 /* Coordinators */ = {
@@ -450,10 +475,13 @@
 				146934EB25A2605B00878DB9 /* TopOutTrainer.xcdatamodeld in Sources */,
 				1416CAA0264C256D00BAB857 /* WeightsViewCoordinator.swift in Sources */,
 				14D13F8225AA776600CF6FF1 /* MainViewController.swift in Sources */,
+				14B0752526B7260700BC28D1 /* CalendarView.swift in Sources */,
 				148491D9261B992C00518405 /* Router.swift in Sources */,
 				1416C9CA264086B900BAB857 /* Navigator.swift in Sources */,
 				142631CA25BD24CF0083A04F /* UIColor+Extensions.swift in Sources */,
 				1416CA98264C232D00BAB857 /* CalendarViewModel.swift in Sources */,
+				14B0752A26B9DB9600BC28D1 /* UIPanGestureRecognizerMainView.swift in Sources */,
+				14AB0F412666E5FC002A1F54 /* LowerUIView.swift in Sources */,
 				149B184125B4CCBD00F8B325 /* MainUIView.swift in Sources */,
 				1416CAA2264C257800BAB857 /* StatsViewCoordinator.swift in Sources */,
 				1430DD0325D82669006F0ADD /* TimerViewController.swift in Sources */,

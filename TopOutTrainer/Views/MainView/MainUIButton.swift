@@ -42,11 +42,6 @@ class MainUIButton: UIButton
         setConstraints()
         setShadow()
         setBGImage()
-//        let lighterButtonColor = bgColor.lighter(by: 30.0)?.cgColor
-//        let originalButtonColor = bgColor.cgColor
-//        let cgColorArray: [CGColor] = [lighterButtonColor!, originalButtonColor]
-//        self.applyGradient(colors: cgColorArray)
-        
     }
     
     /**

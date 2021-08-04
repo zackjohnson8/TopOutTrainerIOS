@@ -9,7 +9,7 @@ import UIKit
 
 protocol MainUIViewDelegate: AnyObject
 {
-    func addedToWindow()
+    func addedMainUIViewToWindow()
 }
 
 class MainUIView: UIView
@@ -21,12 +21,12 @@ class MainUIView: UIView
     required override init(frame: CGRect)
     {
         super.init(frame: frame)
-        self.backgroundColor = .green
+        self.backgroundColor = .secondaryColor()
     }
     
     override func didMoveToWindow() {
         super.didMoveToWindow()
-        delegate?.addedToWindow()
+        delegate?.addedMainUIViewToWindow()
     }
     
     required init?(coder: NSCoder) {
