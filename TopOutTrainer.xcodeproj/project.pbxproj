@@ -17,7 +17,6 @@
 		1416CA8C2649F55100BAB857 /* TimerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CA8B2649F55100BAB857 /* TimerUIView.swift */; };
 		1416CA8E264C220E00BAB857 /* WeightsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CA8D264C220E00BAB857 /* WeightsUIView.swift */; };
 		1416CA90264C223E00BAB857 /* StatsUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CA8F264C223E00BAB857 /* StatsUIView.swift */; };
-		1416CA92264C225E00BAB857 /* CalendarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CA91264C225E00BAB857 /* CalendarUIView.swift */; };
 		1416CA94264C231200BAB857 /* WeightsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CA93264C231200BAB857 /* WeightsViewModel.swift */; };
 		1416CA96264C232200BAB857 /* StatsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CA95264C232200BAB857 /* StatsViewModel.swift */; };
 		1416CA98264C232D00BAB857 /* CalendarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1416CA97264C232D00BAB857 /* CalendarViewModel.swift */; };
@@ -49,6 +48,7 @@
 		14AB0F412666E5FC002A1F54 /* LowerUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14AB0F402666E5FC002A1F54 /* LowerUIView.swift */; };
 		14B0752526B7260700BC28D1 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0752426B7260700BC28D1 /* CalendarView.swift */; };
 		14B0752A26B9DB9600BC28D1 /* UIPanGestureRecognizerMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0752926B9DB9600BC28D1 /* UIPanGestureRecognizerMainView.swift */; };
+		14B0752C26BA534900BC28D1 /* CalendarUIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14B0752B26BA534900BC28D1 /* CalendarUIView.swift */; };
 		14D13F6F25AA71E600CF6FF1 /* AppCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D13F6E25AA71E600CF6FF1 /* AppCoordinator.swift */; };
 		14D13F7825AA730F00CF6FF1 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D13F7725AA730F00CF6FF1 /* Coordinator.swift */; };
 		14D13F7D25AA772200CF6FF1 /* MainViewCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14D13F7C25AA772200CF6FF1 /* MainViewCoordinator.swift */; };
@@ -83,7 +83,6 @@
 		1416CA8B2649F55100BAB857 /* TimerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimerUIView.swift; sourceTree = "<group>"; };
 		1416CA8D264C220E00BAB857 /* WeightsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightsUIView.swift; sourceTree = "<group>"; };
 		1416CA8F264C223E00BAB857 /* StatsUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsUIView.swift; sourceTree = "<group>"; };
-		1416CA91264C225E00BAB857 /* CalendarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUIView.swift; sourceTree = "<group>"; };
 		1416CA93264C231200BAB857 /* WeightsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeightsViewModel.swift; sourceTree = "<group>"; };
 		1416CA95264C232200BAB857 /* StatsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatsViewModel.swift; sourceTree = "<group>"; };
 		1416CA97264C232D00BAB857 /* CalendarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewModel.swift; sourceTree = "<group>"; };
@@ -121,6 +120,7 @@
 		14AB0F402666E5FC002A1F54 /* LowerUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LowerUIView.swift; sourceTree = "<group>"; };
 		14B0752426B7260700BC28D1 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		14B0752926B9DB9600BC28D1 /* UIPanGestureRecognizerMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPanGestureRecognizerMainView.swift; sourceTree = "<group>"; };
+		14B0752B26BA534900BC28D1 /* CalendarUIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarUIView.swift; sourceTree = "<group>"; };
 		14D13F6E25AA71E600CF6FF1 /* AppCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppCoordinator.swift; sourceTree = "<group>"; };
 		14D13F7725AA730F00CF6FF1 /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
 		14D13F7C25AA772200CF6FF1 /* MainViewCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewCoordinator.swift; sourceTree = "<group>"; };
@@ -281,9 +281,9 @@
 				1416CA8B2649F55100BAB857 /* TimerUIView.swift */,
 				1416CA8D264C220E00BAB857 /* WeightsUIView.swift */,
 				1416CA8F264C223E00BAB857 /* StatsUIView.swift */,
-				1416CA91264C225E00BAB857 /* CalendarUIView.swift */,
 				1416CAA52652E08600BAB857 /* PlayPauseUIButton.swift */,
 				1416CAA7265B09F700BAB857 /* ResetTimerUIButton.swift */,
+				14B0752B26BA534900BC28D1 /* CalendarUIView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -459,7 +459,6 @@
 				1416CA862649B19F00BAB857 /* TimerViewCoordinator.swift in Sources */,
 				1416CAA62652E08700BAB857 /* PlayPauseUIButton.swift in Sources */,
 				1436EC9825B12582004720EF /* MainViewModel.swift in Sources */,
-				1416CA92264C225E00BAB857 /* CalendarUIView.swift in Sources */,
 				1416CA90264C223E00BAB857 /* StatsUIView.swift in Sources */,
 				1416C9CE2640892B00BAB857 /* UIView+Extensions.swift in Sources */,
 				148491E1261B9BA500518405 /* NavigationRouter.swift in Sources */,
@@ -488,6 +487,7 @@
 				14D13F7D25AA772200CF6FF1 /* MainViewCoordinator.swift in Sources */,
 				142631B725BD02040083A04F /* MainUIButton.swift in Sources */,
 				1416C9CC264088D800BAB857 /* AppRootViewController.swift in Sources */,
+				14B0752C26BA534900BC28D1 /* CalendarUIView.swift in Sources */,
 				1416CA8C2649F55100BAB857 /* TimerUIView.swift in Sources */,
 				1416CA9A264C244800BAB857 /* WeightsViewController.swift in Sources */,
 				1416CA9C264C245200BAB857 /* StatsViewController.swift in Sources */,
