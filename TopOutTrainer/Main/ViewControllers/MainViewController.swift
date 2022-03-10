@@ -26,9 +26,15 @@ final class MainViewController: UIViewController
     
     weak var delegate: MainViewControllerDelegate?
 
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    override init(nibName nibNameOrNil: String?,
+                  bundle nibBundleOrNil: Bundle?) {
+
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        self.navigationSettings = MainNavigationBar(title: "MainViewController", rightBarButtonItem: MainNavigationRightBarButtonItem())
+        self.navigationSettings = MainNavigationBar(
+                title: "MainViewController",
+                rightBarButtonItem: MainNavigationRightBarButtonItem(),
+                largeTitleDisplayMode: .always
+        )
     }
 
     required init?(coder: NSCoder) {
@@ -42,12 +48,24 @@ final class MainViewController: UIViewController
 
     private func initialize() {
 
-        self.view.layoutIfNeeded()
         self.view.backgroundColor = .primaryColor()
 
-        // Get mainView from mainModel and add it to the subviews
+        // Navigation Bar Settings
+        self.navigationController?.navigationBar.prefersLargeTitles =
+                                        true
+        self.navigationController?.navigationBar.sizeToFit()
+
+        navigationItem.title =          navigationSettings.title
+        navigationItem.rightBarButtonItem =
+                                        navigationSettings.rightBarButtonItem
+        navigationItem.largeTitleDisplayMode =
+                                        navigationSettings.largeTitleDisplayMode
+
+        // Add mainView to subviews
         mainView = MainUIView()
         self.view.addSubview(mainView)
+
+        self.view.layoutIfNeeded()
     }
 
 }

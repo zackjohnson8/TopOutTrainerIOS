@@ -7,9 +7,11 @@ class MainNavigationBar {
 
     var title: String!
     var rightBarButtonItem: UIBarButtonItem!
+    var largeTitleDisplayMode:  UINavigationItem.LargeTitleDisplayMode!
 
-    init(title: String!, rightBarButtonItem: UIBarButtonItem!) {
+    init(title: String!, rightBarButtonItem: UIBarButtonItem!, largeTitleDisplayMode: UINavigationItem.LargeTitleDisplayMode) {
         self.title = title
         self.rightBarButtonItem = rightBarButtonItem
+        self.largeTitleDisplayMode = largeTitleDisplayMode
     }
 }

@@ -12,22 +12,19 @@ protocol MainUIViewDelegate: AnyObject
     func addedMainUIViewToWindow()
 }
 
-class MainUIView: UIView
+class MainUIView: UIStackView
 {
 
     var mainViewModel: MainViewModel!
     weak var delegate: MainUIViewDelegate?
 
-    var constraints_m: [NSLayoutConstraint]?
-
-    required override init(frame: CGRect)
-    {
+    override init(frame: CGRect) {
         super.init(frame: frame)
-
+        self.axis = .vertical
     }
 
-    required init?(coder: NSCoder) {
-        fatalError("Error: MainUIView init fatal error")
+    required init(coder: NSCoder) {
+        super.init(coder: coder)
     }
 
     deinit {
