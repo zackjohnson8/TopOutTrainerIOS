@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<vcs-root xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" uuid="d29cb61a-3e6a-4158-89d5-9e5eb6a9d87f" type="jetbrains.git" xsi:noNamespaceSchemaLocation="https://www.jetbrains.com/teamcity/schemas/2021.1/project-config.xsd">
+  <name>github topouttrainer</name>
+  <param name="agentCleanFilesPolicy" value="ALL_UNTRACKED" />
+  <param name="agentCleanPolicy" value="ON_BRANCH_CHANGE" />
+  <param name="authMethod" value="PASSWORD" />
+  <param name="branch" value="main" />
+  <param name="ignoreKnownHosts" value="true" />
+  <param name="secure:password" value="credentialsJSON:0f23c83d-0d82-4f65-a2d8-d65254d34418" />
+  <param name="submoduleCheckout" value="CHECKOUT" />
+  <param name="url" value="https://github.com/zackjohnson8/TopOutTrainerIOS" />
+  <param name="useAlternates" value="AUTO" />
+  <param name="username" value="zackjohnson8@gmail.com" />
+  <param name="usernameStyle" value="USERID" />
+</vcs-root>
+
